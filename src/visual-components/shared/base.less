@@ -1,0 +1,39 @@
+@import './constants.less';
+
+html {
+  background: #efeff5;
+}
+
+body {
+  margin: 80px 0 35px 0;
+  font-family: Montserrat, sans-serif;
+}
+
+@media (min-width: 708px) {
+  main {
+    width: 708px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 964px) {
+  main {
+    width: 964px;
+  }
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: @link-color;
+}
+
+a:visited,
+a:hover,
+a:active {
+  color: @link-color;
+}

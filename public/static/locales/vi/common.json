@@ -1,0 +1,12 @@
+{
+  "Hello": "Xin chào",
+  "Home": "Trang chủ",
+  "About": "Về chúng tôi",
+  "Help": "Trợ giúp",
+  "Privacy": "Chính sách bảo mật",
+  "Terms": "Điều khoản sử dụng",
+  "Search": "Tìm kiếm",
+  "Tags": "Thẻ",
+  "ErrorPageMessageServer": "Đã có lỗi xảy ra trên server. Mã lỗi: {{statusCode}}",
+  "ErrorPageMessageClient": "Đã có lỗi xảy ra. Mã lỗi: client_error"
+}

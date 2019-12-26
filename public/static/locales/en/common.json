@@ -1,0 +1,12 @@
+{
+  "Hello": "Hello",
+  "Home": "Home",
+  "About": "About",
+  "Help": "Help",
+  "Privacy": "Privacy",
+  "Terms": "Terms",
+  "Search": "Search",
+  "Tags": "Tags",
+  "ErrorPageMessageServer": "An error {{statusCode}} occurred on server",
+  "ErrorPageMessageClient": "An error occurred on client "
+}

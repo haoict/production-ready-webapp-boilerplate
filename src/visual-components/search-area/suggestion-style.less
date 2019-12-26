@@ -1,0 +1,48 @@
+@import '../shared/constants.less';
+
+.suggestion-component {
+  border: 1px solid #d4d4d4;
+  border-top: none;
+  z-index: 99;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: 80vh;
+  width: 85%;
+  position: absolute;
+  top: 100%;
+
+  .suggestion-item {
+    display: flex;
+    width: 100%;
+    padding: 3px 6px;
+    background-color: white;
+    cursor: pointer;
+    &:hover {
+      background-color: #ecf0f7;
+    }
+
+    .icon {
+      width: 40px;
+      height: 40px;
+      img {
+        width: 100%;
+      }
+    }
+
+    .text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-left: 10px;
+
+      .name {
+        color: @primary-color;
+      }
+
+      .title {
+        color: gray;
+        font-size: 12px;
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+@import '../shared/constants.less';
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 44px;
+  z-index: 10;
+  background: rgba(246, 246, 248, 0.85);
+  backdrop-filter: blur(20px);
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #c8c7cc;
+  }
+
+  .home {
+    margin-left: 10px;
+  }
+
+  .user {
+    margin-right: 10px;
+  }
+}
