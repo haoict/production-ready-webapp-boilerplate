@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { withTranslation } from '../../helpers/i18n';
 import './suggestion-style.less';
 
+const POKEMON_THUMBNAILS_PATH = '/static/assets/pokemon/thumbnails/';
+const POKEMON_SPRITES_PATH = '/static/assets/pokemon/sprites/';
+
 class Suggestion extends Component {
   render() {
     const { t, data, onSuggestItemClick } = this.props;
@@ -15,13 +18,10 @@ class Suggestion extends Component {
         onClick={() => {
           onSuggestItemClick(item.id);
         }}>
-        <div className='icon'>
-          <img src={item.icon} alt={item.name} />
+        <div className='thumbnail'>
+          <img src={POKEMON_SPRITES_PATH + ('00' + item.id).slice(-3) + 'MS.png'} alt={item.name.english} />
         </div>
-        <div className='text'>
-          <div className='name'>{item.name}</div>
-          <div className='title'>{item.title}</div>
-        </div>
+        <div className='name'>{item.name.english}</div>
       </div>
     ));
 

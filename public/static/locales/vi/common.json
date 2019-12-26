@@ -7,6 +7,10 @@
   "Terms": "Điều khoản sử dụng",
   "Search": "Tìm kiếm",
   "Tags": "Thẻ",
+  "Most View Pokémons": "Pokémons được xem nhiều",
+  "Viral Pokémons": "Pokémons đang hot",
+  "ShowingXresult": "Hiển thị {{count}} kết quả",
+  "ShowingXresult_plural": "Hiển thị {{count}} kết quả",
   "ErrorPageMessageServer": "Đã có lỗi xảy ra trên server. Mã lỗi: {{statusCode}}",
   "ErrorPageMessageClient": "Đã có lỗi xảy ra. Mã lỗi: client_error"
 }

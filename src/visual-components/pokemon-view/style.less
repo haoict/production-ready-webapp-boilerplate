@@ -1,0 +1,132 @@
+@import '../shared/constants.less';
+
+.pokemon-view-component {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .image {
+    min-width: 120px;
+    max-width: 180px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .space {
+    height: 0px;
+    min-width: 20px;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+  }
+
+  .head {
+    padding-bottom: 10px;
+
+    .name {
+      font-size: 30px;
+      color: @primary-color;
+    }
+
+    .title {
+      color: gray;
+    }
+  }
+
+  .types {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 10px;
+
+    button {
+      font-family: 'Press Start 2P', cursive;
+      padding-top: 2px;
+      height: 22px;
+      color: white;
+      margin-left: 5px;
+      background-color: #666;
+      border-radius: 3px;
+      cursor: pointer;
+
+      &.Poison {
+        background-color: #a040a0;
+      }
+      &.Grass {
+        background-color: #78c850;
+      }
+      &.Fire {
+        background-color: #f08030;
+      }
+      &.Flying {
+        background-color: #a890f0;
+      }
+      &.Water {
+        background-color: #6890f0;
+      }
+      &.Bug {
+        background-color: #a9a97e;
+      }
+      &.Normal {
+        background-color: #807870;
+      }
+      &.Electric {
+        background-color: #f8d02f;
+      }
+      &.Ground {
+        background-color: #e0c068;
+      }
+      &.Fairy {
+        background-color: #dea4de;
+      }
+      &.Fighting {
+        background-color: #c02f27;
+      }
+      &.Psychic {
+        background-color: #d16280;
+      }
+      &.Rock {
+        background-color: #b8a038;
+      }
+      &.Steel {
+        background-color: #b8b8d0;
+      }
+      &.Ice {
+        background-color: #98d8d8;
+      }
+      &.Ghost {
+        background-color: #705798;
+      }
+      &.Dragon {
+        background-color: #7038f8;
+      }
+      &.Dark {
+        background-color: #705848;
+      }
+    }
+  }
+
+  .description {
+    padding-bottom: 10px;
+    font-size: 14px;
+  }
+
+  .stats {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 708px) {
+  .item-view-component {
+    flex-wrap: wrap;
+
+    .icon {
+      margin: auto;
+    }
+  }
+}

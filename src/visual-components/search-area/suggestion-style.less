@@ -6,7 +6,7 @@
   z-index: 99;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
-  max-height: 80vh;
+  max-height: 50vh;
   width: 85%;
   position: absolute;
   top: 100%;
@@ -21,7 +21,7 @@
       background-color: #ecf0f7;
     }
 
-    .icon {
+    .thumbnail {
       width: 40px;
       height: 40px;
       img {
@@ -29,20 +29,18 @@
       }
     }
 
-    .text {
+    .name {
       display: flex;
       flex-direction: column;
       justify-content: center;
       margin-left: 10px;
-
-      .name {
-        color: @primary-color;
-      }
-
-      .title {
-        color: gray;
-        font-size: 12px;
-      }
+      color: @primary-color;
     }
+  }
+}
+
+@media (max-width: 575px) {
+  .suggestion-component {
+    width: calc(100% - 20px);
   }
 }

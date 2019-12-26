@@ -12,7 +12,7 @@ const About = props => {
       <p>Production Ready Web App Boilerplate</p>
       <h3>Copyright Notice</h3>
       <p>
-        Please note all champions data and the logo are copyrighted by the Riot Company and its affiliates. This
+        Please note all Pokémon data and the logo are copyrighted by the Pokémon Company and its affiliates. This
         repository is merely a compilation of data collected by automated tool.
       </p>
     </>

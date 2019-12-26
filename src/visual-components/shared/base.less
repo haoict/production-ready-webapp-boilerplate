@@ -5,6 +5,7 @@ html {
 }
 
 body {
+  min-width: 320px;
   margin: 80px 0 35px 0;
   font-family: Montserrat, sans-serif;
 }
@@ -19,6 +20,14 @@ body {
   main {
     width: 964px;
   }
+}
+
+// prevent auto zoom when focus on input for mobile
+// @media screen and (max-width: 575px) {
+select,
+textarea,
+input {
+  font-size: 16px;
 }
 
 *,

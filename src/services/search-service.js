@@ -1,9 +1,9 @@
 import { fetchApi } from './utils';
 
-function searchChampName(name) {
-  return fetchApi('lolchamps/search', null, { name });
+function searchPokemonName(name, isfullsearch = false) {
+  return fetchApi('pokemon/search', null, { name, isfullsearch });
 }
 
 export const searchService = {
-  searchChampName
+  searchPokemonName
 };

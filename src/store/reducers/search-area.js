@@ -6,11 +6,11 @@ const initState = {
 
 const searchArea = (state = initState, action) => {
   switch (action.type) {
-    case 'SEARCH_CHAMP_NAME_LOADING':
+    case 'SEARCH_POKEMON_NAME_LOADING':
       return { isLoading: true };
-    case 'SEARCH_CHAMP_NAME_SUCCESS':
+    case 'SEARCH_POKEMON_NAME_SUCCESS':
       return { isLoading: false, data: action.data };
-    case 'SEARCH_CHAMP_NAME_ERROR':
+    case 'SEARCH_POKEMON_NAME_ERROR':
       return { isLoading: false, error: action.error };
     default:
       return state;

@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import { searchArea } from './search-area';
-import { item } from './item';
+import { pokemon } from './pokemon';
 
 export default combineReducers({
   searchArea,
-  item
+  pokemon
 });

@@ -1,0 +1,43 @@
+@import '../shared/constants.less';
+
+.pokemon-list-component {
+  .header {
+    padding: 0 10px;
+
+    h3 {
+      color: @primary-color;
+    }
+  }
+
+  .list {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .pokemon-card {
+    width: 100px;
+    height: 100px;
+
+    a {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .thumbnail {
+      width: 40px;
+      height: 40px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .name {
+      font-size: 13px;
+    }
+  }
+}

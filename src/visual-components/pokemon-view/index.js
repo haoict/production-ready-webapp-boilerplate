@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { withTranslation } from '../../helpers/i18n';
 import './style.less';
 
-class ItemView extends Component {
+const POKEMON_IMAGE_PATH = '/static/assets/pokemon/images/';
+
+class PokemonView extends Component {
   render() {
     const { t, isLoading, data, error } = this.props;
 
@@ -16,18 +18,18 @@ class ItemView extends Component {
       return <div>No item found</div>;
     }
 
-    const tags = data.tags.map(t => (
-      <div className='tag' key={t}>
-        <button>{t}</button>
+    const types = data.type.map(type => (
+      <div className='type' key={type}>
+        <button className={type}>{type.toUpperCase()}</button>
       </div>
     ));
 
     const stats = [];
-    if (data.stats) {
-      for (const property in data.stats) {
+    if (data.base) {
+      for (const property in data.base) {
         stats.push(
           <div key={property}>
-            {`${property}: ${data.stats[property]}`}
+            {`${property}: ${data.base[property]}`}
             <br />
           </div>
         );
@@ -35,17 +37,18 @@ class ItemView extends Component {
     }
 
     return (
-      <div className='item-view-component'>
-        <div className='icon'>
-          <img src={data.icon} alt={data.name} />
+      <div className='pokemon-view-component'>
+        <div className='image'>
+          <img src={POKEMON_IMAGE_PATH + ('00' + data.id).slice(-3) + '.png'} alt={data.name.english} />
         </div>
+        <div className='space' />
         <div className='info'>
           <div className='head'>
-            <div className='name'>{data.name}</div>
+            <div className='name'>{data.name.english}</div>
             <div className='title'>{data.title}</div>
           </div>
-          <div className='tags'>
-            {t('Tags')}: {tags}
+          <div className='types'>
+            {t('Types')}: {types}
           </div>
           <div className='description'>{data.description}</div>
           <div className='stats'>{stats}</div>
@@ -55,4 +58,4 @@ class ItemView extends Component {
   }
 }
 
-export default withTranslation()(ItemView);
+export default withTranslation()(PokemonView);

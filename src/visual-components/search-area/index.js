@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Router from 'next/router';
 import { withTranslation } from '../../helpers/i18n';
 import Suggestion from './suggestion';
 import './style.less';
@@ -8,33 +9,40 @@ class SearchArea extends Component {
     searchText: ''
   };
 
+  componentWillUnmount() {
+    clearTimeout(this.delayTimer);
+    this.delayTimer = null;
+  }
+
   onSearchTextChange = e => {
-    const { searchChampName } = this.props;
+    const { searchPokemonName } = this.props;
     const searchText = e.target.value;
     this.setState({ searchText });
     clearTimeout(this.delayTimer);
 
     if (!searchText) {
-      searchChampName('');
+      searchPokemonName('');
       return;
     }
 
     this.delayTimer = setTimeout(() => {
-      searchChampName(searchText);
+      searchPokemonName(searchText);
     }, 500);
   };
 
   onSubmit = e => {
-    const { searchChampName } = this.props;
     const { searchText } = this.state;
     e.preventDefault();
-    searchChampName(searchText);
+    if (!searchText) {
+      return;
+    }
+    Router.push(`/search?keyword=${searchText}`, `/search/${searchText}`).then(() => window.scrollTo(0, 0));
   };
 
   onSearchTextClear = () => {
-    const { searchChampName } = this.props;
+    const { searchPokemonName } = this.props;
     this.setState({ searchText: '' });
-    searchChampName('');
+    searchPokemonName('');
   };
 
   render() {

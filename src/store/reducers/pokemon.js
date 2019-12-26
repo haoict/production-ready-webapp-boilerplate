@@ -4,17 +4,17 @@ const initState = {
   error: null
 };
 
-const item = (state = initState, action) => {
+const pokemon = (state = initState, action) => {
   switch (action.type) {
-    case 'FETCH_ITEM_DATA_LOADING':
+    case 'FETCH_POKEMON_DATA_LOADING':
       return { isLoading: true };
-    case 'FETCH_ITEM_DATA_SUCCESS':
+    case 'FETCH_POKEMON_DATA_SUCCESS':
       return { isLoading: false, data: action.data };
-    case 'FETCH_ITEM_DATA_ERROR':
+    case 'FETCH_POKEMON_DATA_ERROR':
       return { isLoading: false, error: action.error };
     default:
       return state;
   }
 };
 
-export { item };
+export { pokemon };

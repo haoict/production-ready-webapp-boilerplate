@@ -2,20 +2,20 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withTranslation } from '../../helpers/i18n';
 import SearchArea from '../../visual-components/search-area';
-import { searchChampName } from '../../store/actions/search-area';
+import { searchPokemonName } from '../../store/actions/search-area';
 import Router from 'next/router';
 
 class SearchAreaContainer extends Component {
-  onSuggestItemClick = itemId => {
-    this.props.searchChampName('');
-    Router.push(`/items?id=${itemId}`, `/items/${itemId}`).then(() => window.scrollTo(0, 0));
+  onSuggestItemClick = id => {
+    this.props.searchPokemonName('');
+    Router.push(`/pokemons?id=${id}`, `/pokemons/${id}`).then(() => window.scrollTo(0, 0));
   };
 
   render() {
-    const { t, searchChampName, isLoading, data, error } = this.props;
+    const { t, searchPokemonName, isLoading, data, error } = this.props;
     return (
       <SearchArea
-        searchChampName={searchChampName}
+        searchPokemonName={searchPokemonName}
         isLoading={isLoading}
         data={data}
         error={error}
@@ -32,8 +32,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  searchChampName: name => {
-    dispatch(searchChampName(name));
+  searchPokemonName: (name, isfullsearch) => {
+    dispatch(searchPokemonName(name, isfullsearch));
   }
 });
 
