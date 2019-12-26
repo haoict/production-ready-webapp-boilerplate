@@ -1,0 +1,30 @@
+# Javascript Node CircleCI 2.0 configuration file
+version: 2
+jobs:
+  build:
+    machine: true
+    steps:
+      - checkout
+      - run: docker login -u $DOCKER_USER -p $DOCKER_PASS
+      - run: docker build . -t $DOCKER_USER/production-ready-webapp-boilerplate:${CIRCLE_BRANCH}
+      - run: docker push $DOCKER_USER/production-ready-webapp-boilerplate:${CIRCLE_BRANCH}
+
+  deploy:
+    machine: true
+    steps:
+      - run: ssh admin@nless.pro "docker pull $DOCKER_USER/production-ready-webapp-boilerplate:${CIRCLE_BRANCH}; docker kill pokemon || true; docker rm pokemon || true"
+      - run: ssh admin@nless.pro "docker run --name pokemon --restart always -d -p 3005:3005 -v /home/admin/docker/bindmount/pokemon/.env:/usr/src/app/.env $DOCKER_USER/production-ready-webapp-boilerplate:${CIRCLE_BRANCH}"
+      - run: ssh admin@nless.pro "docker image prune -f"
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - master
