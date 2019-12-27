@@ -5,7 +5,7 @@ import withRedux from 'next-redux-wrapper';
 import Layout from '../src/visual-components/layout';
 import { makeStore } from '../src/store';
 
-class EpubvnApp extends App {
+class MyApp extends App {
   render() {
     const { Component, pageProps, store } = this.props;
     return (
@@ -18,4 +18,4 @@ class EpubvnApp extends App {
   }
 }
 
-export default withRedux(makeStore)(appWithTranslation(EpubvnApp));
+export default withRedux(makeStore)(appWithTranslation(MyApp));
