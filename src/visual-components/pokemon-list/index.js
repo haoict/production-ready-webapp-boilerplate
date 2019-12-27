@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withTranslation } from '../../helpers/i18n';
+import { i18n, withTranslation } from '../../helpers/i18n';
 import Link from 'next/link';
 import './style.less';
 
@@ -10,22 +10,28 @@ class PokemonList extends Component {
   render() {
     const { t, data, header, showCount = true } = this.props;
 
-    if (!data || !data.length) return null;
+    if (!data || !data.length)
+      return (
+        <div className='pokemon-list-component'>
+          <div className='header'>{showCount && <p>{t('ShowingXresult', { count: 0 })}</p>}</div>
+        </div>
+      );
 
-    const items = data.map(item => (
-      <div key={item.id} className='pokemon-card'>
-        <Link as={`/pokemons/${item.id}`} href={`/pokemons?id=${item.id}`}>
-          <a>
-            <div className='thumbnail'>
-              <img src={POKEMON_SPRITES_PATH + ('00' + item.id).slice(-3) + 'MS.png'} alt={item.name.english} />
-            </div>
-            <div className='name'>{item.name.english}</div>
-          </a>
-        </Link>
-      </div>
-    ));
-
-    if (!items || !items.length) return null;
+    const items = data.map(item => {
+      const name = i18n.language === 'ja' ? item.name.japanese : item.name.english;
+      return (
+        <div key={item.id} className='pokemon-card'>
+          <Link as={`/pokemons/${item.id}`} href={`/pokemons?id=${item.id}`}>
+            <a>
+              <div className='thumbnail'>
+                <img src={POKEMON_SPRITES_PATH + ('00' + item.id).slice(-3) + 'MS.png'} alt={name} />
+              </div>
+              <div className='name'>{name}</div>
+            </a>
+          </Link>
+        </div>
+      );
+    });
 
     return (
       <div className='pokemon-list-component'>

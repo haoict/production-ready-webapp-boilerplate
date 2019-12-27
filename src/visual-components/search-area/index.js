@@ -26,6 +26,7 @@ class SearchArea extends Component {
     }
 
     this.delayTimer = setTimeout(() => {
+      this.delayTimer = null;
       searchPokemonName(searchText);
     }, 500);
   };
@@ -46,7 +47,7 @@ class SearchArea extends Component {
   };
 
   render() {
-    const { t, data, onSuggestItemClick } = this.props;
+    const { t, isLoading, data, onSuggestItemClick } = this.props;
     const { searchText } = this.state;
 
     return (
@@ -69,6 +70,9 @@ class SearchArea extends Component {
           <button type='submit' ref='submitBtn'>
             <i className='fas fa-search fa-fw' />
           </button>
+          {!this.delayTimer && !isLoading && searchText && (!data || !data.length) && (
+            <div className='indicate-text'>{t('No result')}</div>
+          )}
           <Suggestion data={data} onSuggestItemClick={onSuggestItemClick} />
         </form>
       </div>

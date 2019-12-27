@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withTranslation } from '../../helpers/i18n';
+import { i18n, withTranslation } from '../../helpers/i18n';
 import './suggestion-style.less';
 
 const POKEMON_THUMBNAILS_PATH = '/static/assets/pokemon/thumbnails/';
@@ -11,19 +11,22 @@ class Suggestion extends Component {
 
     if (!data || !data.length) return null;
 
-    const items = data.map(item => (
-      <div
-        key={item.id}
-        className='suggestion-item'
-        onClick={() => {
-          onSuggestItemClick(item.id);
-        }}>
-        <div className='thumbnail'>
-          <img src={POKEMON_SPRITES_PATH + ('00' + item.id).slice(-3) + 'MS.png'} alt={item.name.english} />
+    const items = data.map(item => {
+      const name = i18n.language === 'ja' ? item.name.japanese : item.name.english;
+      return (
+        <div
+          key={item.id}
+          className='suggestion-item'
+          onClick={() => {
+            onSuggestItemClick(item.id);
+          }}>
+          <div className='thumbnail'>
+            <img src={POKEMON_SPRITES_PATH + ('00' + item.id).slice(-3) + 'MS.png'} alt={name} />
+          </div>
+          <div className='name'>{name}</div>
         </div>
-        <div className='name'>{item.name.english}</div>
-      </div>
-    ));
+      );
+    });
 
     if (!items || !items.length) return null;
 

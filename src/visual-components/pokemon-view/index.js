@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withTranslation } from '../../helpers/i18n';
+import { i18n, withTranslation } from '../../helpers/i18n';
 import './style.less';
 
 const POKEMON_IMAGE_PATH = '/static/assets/pokemon/images/';
@@ -36,19 +36,21 @@ class PokemonView extends Component {
       }
     }
 
+    const name = i18n.language === 'ja' ? data.name.japanese : data.name.english;
+
     return (
       <div className='pokemon-view-component'>
         <div className='image'>
-          <img src={POKEMON_IMAGE_PATH + ('00' + data.id).slice(-3) + '.png'} alt={data.name.english} />
+          <img src={POKEMON_IMAGE_PATH + ('00' + data.id).slice(-3) + '.png'} alt={name} />
         </div>
         <div className='space' />
         <div className='info'>
           <div className='head'>
-            <div className='name'>{data.name.english}</div>
+            <div className='name'>{name}</div>
             <div className='title'>{data.title}</div>
           </div>
           <div className='types'>
-            {t('Types')}: {types}
+            {t('Type')}: {types}
           </div>
           <div className='description'>{data.description}</div>
           <div className='stats'>{stats}</div>

@@ -23,8 +23,7 @@ class Header extends Component {
             </a>
           </Link>
         </div>
-
-        <div className='user'>
+        <div className='user' onClick={() => alert('Login feature comming soon')}>
           <i className='fa fa-user'></i>
         </div>
       </header>

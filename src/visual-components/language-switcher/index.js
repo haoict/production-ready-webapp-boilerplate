@@ -15,8 +15,8 @@ const languages = [
   },
   {
     key: 'ja',
-    name: '日本語',
-    enable: false
+    name: '🇯🇵 日本語',
+    enable: true
   },
   {
     key: 'zh',

@@ -8,7 +8,7 @@ const options = {
   defaultNS: 'common',
   defaultLanguage: 'en',
   ignoreRoutes: ['/_next', '/static'],
-  otherLanguages: ['vi'],
+  otherLanguages: ['vi', 'ja'],
   localePath: typeof window === 'undefined' ? 'public/static/locales' : 'static/locales',
   localeStructure: '{{lng}}/{{ns}}',
   localeSubpaths: {},

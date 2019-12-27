@@ -56,7 +56,7 @@ router.get('/search', (req, res) => {
       c.name.english
         .trim()
         .toLowerCase()
-        .search(queryName) !== -1
+        .search(queryName) !== -1 || c.name.japanese.search(queryName) !== -1
   );
 
   if (!isFullSearch) {
