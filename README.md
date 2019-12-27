@@ -1,5 +1,7 @@
 ## About
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/haoict/production-ready-webapp-boilerplate.svg)](https://greenkeeper.io/)
+
 A well-structured production ready modern web application boilerplate with Next.js, React, Redux, Express.js for web server and build-in API, Less, Css, Axios, i18n, EnvConfig and more.
 
 ## Motivation
