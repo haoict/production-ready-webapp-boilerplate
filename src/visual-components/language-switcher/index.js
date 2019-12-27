@@ -4,13 +4,13 @@ import './style.less';
 
 const languages = [
   {
-    key: 'vi',
-    name: '🇻🇳 Tiếng Việt',
+    key: 'en',
+    name: '🇬🇧 English',
     enable: true
   },
   {
-    key: 'en',
-    name: '🇬🇧 English',
+    key: 'vi',
+    name: '🇻🇳 Tiếng Việt',
     enable: true
   },
   {

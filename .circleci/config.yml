@@ -6,8 +6,15 @@ jobs:
       - image: node:12
     steps:
       - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "./yarn.lock" }}
       - run: yarn
       - run: yarn build
+      - save_cache:
+          key: dependency-cache-{{ checksum "./yarn.lock" }}
+          paths:
+            - ./node_modules
+            - ./.next/cache
 
   build:
     machine: true
@@ -26,25 +33,17 @@ jobs:
 
 workflows:
   version: 2
-  test:
-    jobs:
-      - test:
-          filters:
-            branches:
-              ignore:
-                - master
-                - develop
-                - /feature-.*/
 
-  build-and-deploy:
+  test-build-deploy:
     jobs:
+      - test
       - build:
+          requires:
+            - test
           filters:
             branches:
               only:
                 - master
-                - develop
-                - /feature-.*/
       - deploy:
           requires:
             - build
