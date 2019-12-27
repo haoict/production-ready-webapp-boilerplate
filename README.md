@@ -1,8 +1,32 @@
-## About
+# production-ready-webapp-boilerplate
 
-A well-structured production ready modern web application boilerplate with Next.js, React, Redux, Express.js for web server and build-in API, Less, Css, Axios, i18n, EnvConfig and more.
+[![CircleCI](https://circleci.com/gh/haoict/production-ready-webapp-boilerplate/tree/master.svg?style=svg)](https://circleci.com/gh/haoict/production-ready-webapp-boilerplate/tree/master)
+[![CodeFactor](https://www.codefactor.io/repository/github/haoict/production-ready-webapp-boilerplate/badge)](https://www.codefactor.io/repository/github/haoict/production-ready-webapp-boilerplate)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/haoict/production-ready-webapp-boilerplate/blob/master/LICENSE)
+[![Greenkeeper badge](https://badges.greenkeeper.io/haoict/production-ready-webapp-boilerplate.svg)](https://greenkeeper.io/)
 
-## Motivation
+<!-- vscode-markdown-toc -->
+
+- [About](#About)
+- [Motivation](#Motivation)
+- [Features](#Features)
+- [Setup & Documentation](#SetupDocumentation)
+- [License](#License)
+
+<!-- vscode-markdown-toc-config
+	numbering=false
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc -->
+
+## <a name='About'></a>About
+
+🚀 A well-structured production ready modern web application boilerplate (Single Page Application with Server Side Render to boost SEO). With Next.js, React, Redux, Express.js for web server and build-in API, Less, Css, Axios, i18n, EnvConfig and more 🚀
+
+Demo: https://pokemon.nless.pro
+
+## <a name='Motivation'></a>Motivation
 
 When Create React App first launched in July of 2016, it was considered the best way for beginners to get started with React.
 I find that it is too restrictive, and I find the ejection process to be painful, with resulting configuration being far to complex to easily tinker.
@@ -16,7 +40,7 @@ This boilerplate makes it easier to get up and running with a well-structured Ne
 
 Happy coding!
 
-## Features
+## <a name='Features'></a>Features
 
 This project provides a lot of features out of the box. Here's an overview of the included components and tools.
 
@@ -37,7 +61,7 @@ This project provides a lot of features out of the box. Here's an overview of th
 
 <br/>
 
-## Setup & Documentation
+## <a name='SetupDocumentation'></a>Setup & Documentation
 
 1. Clone the repository:
 
@@ -61,6 +85,6 @@ Launch http://localhost:3001
 
 (Change .env file for customize host and port)
 
-## License
+## <a name='License'></a>License
 
-Licensed under the MIT License, Copyright © 2018-present Pankod
+Licensed under the MIT License, Copyright © 2020-present Hao Nguyen <hao.ict56@gmail.com>

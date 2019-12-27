@@ -1,6 +1,14 @@
 # Javascript Node CircleCI 2.0 configuration file
 version: 2
 jobs:
+  test:
+    docker:
+      - image: node:12
+    steps:
+      - checkout
+      - run: yarn
+      - run: yarn build
+
   build:
     machine: true
     steps:
@@ -18,9 +26,25 @@ jobs:
 
 workflows:
   version: 2
+  test:
+    jobs:
+      - test:
+          filters:
+            branches:
+              ignore:
+                - master
+                - develop
+                - /feature-.*/
+
   build-and-deploy:
     jobs:
-      - build
+      - build:
+          filters:
+            branches:
+              only:
+                - master
+                - develop
+                - /feature-.*/
       - deploy:
           requires:
             - build
