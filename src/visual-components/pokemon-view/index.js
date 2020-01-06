@@ -52,7 +52,6 @@ class PokemonView extends Component {
           <div className='image'>
             <img src={POKEMON_IMAGE_PATH + ('00' + data.id).slice(-3) + '.png'} alt={name} />
           </div>
-          <div className='space' />
           <div className='info'>
             <div className='head'>
               <div className='name'>{name}</div>

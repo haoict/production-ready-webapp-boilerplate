@@ -4,25 +4,28 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  min-height: 200px;
+
+  .loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   .image {
-    min-width: 120px;
-    max-width: 180px;
+    width: 180px;
+    margin: 0 20px;
 
     img {
       width: 100%;
     }
   }
 
-  .space {
-    height: 0;
-    min-width: 20px;
-  }
-
   .info {
     display: flex;
     flex-direction: column;
     min-width: 300px;
+    margin: 0 20px;
   }
 
   .head {
@@ -121,12 +124,11 @@
   }
 }
 
-@media screen and (max-width: 708px) {
-  .item-view-component {
-    flex-wrap: wrap;
-
-    .icon {
-      margin: auto;
+@media (max-width: 375px) {
+  .pokemon-view-component {
+    .space {
+      height: 0;
+      min-width: 0;
     }
   }
 }
