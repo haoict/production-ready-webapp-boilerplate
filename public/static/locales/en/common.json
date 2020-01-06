@@ -1,5 +1,5 @@
 {
-  "Hello": "Hello",
+  "Loading": "Loading",
   "Home": "Home",
   "About": "About",
   "Help": "Help",
@@ -8,7 +8,7 @@
   "Search": "Search",
   "Tags": "Tags",
   "Type": "Type",
-  "Most View Pokémons": "Most View Pokémons",
+  "Most Viewed Pokémons": "Most Viewed Pokémons",
   "Viral Pokémons": "Viral Pokémons",
   "No result": "No result",
   "ShowingXresult": "Showing {{count}} result",

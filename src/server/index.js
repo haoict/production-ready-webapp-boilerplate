@@ -35,7 +35,7 @@ server.use(nextI18NextMiddleware(nextI18next));
  * DEFINE CACHE
  * serve static file with cache, for locales file: 1d, others are 30d
  */
-const staticPath = path.join(__dirname, '../../static');
+const staticPath = path.join(__dirname, '../../public/static');
 server.use(
   '/static/locales',
   express.static(staticPath + '/locales', {

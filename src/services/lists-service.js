@@ -1,15 +1,15 @@
 import { fetchApi } from './utils';
 
-function getViralList(name) {
-  return fetchApi('pokemon/random', null, null);
+function fetchViralPokemonList() {
+  return fetchApi('pokemon/viral', null, null);
 }
 
-function getMostViewList(name) {
+function fetchMostViewedPokemonList() {
   // custom this to get your own list ;-)
-  return fetchApi('pokemon/random', null, null);
+  return fetchApi('pokemon/mostviewed', null, null);
 }
 
 export const listsService = {
-  getViralList,
-  getMostViewList
+  fetchViralPokemonList,
+  fetchMostViewedPokemonList
 };

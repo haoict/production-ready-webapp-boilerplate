@@ -1,8 +1,11 @@
 import { combineReducers } from 'redux';
 import { searchArea } from './search-area';
-import { pokemon } from './pokemon';
+import { pokemonData } from './pokemon-data';
+import { mostViewedPokemonList, viralPokemonList } from './lists';
 
 export default combineReducers({
   searchArea,
-  pokemon
+  pokemonData,
+  mostViewedPokemonList,
+  viralPokemonList
 });

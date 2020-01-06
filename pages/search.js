@@ -1,10 +1,9 @@
 import React from 'react';
-import Head from 'next/head';
 import { withTranslation } from '../src/helpers/i18n';
 import { connect } from 'react-redux';
-// import PokemonListContainer from '../src/container-components/pokemon-list';
-import PokemonList from '../src/visual-components/pokemon-list';
 import { searchPokemonName } from '../src/store/actions/search-area';
+import Head from 'next/head';
+import PokemonList from '../src/visual-components/pokemon-list';
 
 class Search extends React.Component {
   componentWillUnmount() {

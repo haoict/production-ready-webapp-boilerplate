@@ -7,6 +7,8 @@ const pokedexFile = path.join(__dirname, '../static/data/pokedex.json');
 
 module.exports = router;
 
+// Init: load pokemon data from json file
+// Remove or replace this with your real data from database or somewhere
 var pokedexData = [];
 function loadData() {
   try {
@@ -21,18 +23,32 @@ function loadData() {
 }
 loadData();
 
+// utility function
+function getRandomNElementsFromArray(arr, n) {
+  if (!arr || !arr.length || n <= 0) return null;
+  const arrClone = JSON.parse(JSON.stringify(arr));
+  return arrClone.sort(() => Math.random() - Math.random()).slice(0, n);
+}
+
 /**
- * GET /api/pokemon/random
+ * GET /api/pokemon/mostviewed
  * */
-router.get('/random', (req, res) => {
+router.get('/mostviewed', (req, res) => {
   if (!pokedexData) {
     return res.status(500).send({ result: false, message: 'Internal Server Error' });
   }
+  const data = getRandomNElementsFromArray(pokedexData, 18);
+  return res.send({ result: true, data });
+});
 
-  const totalRandom = 18;
-  const pokedexDataClone = JSON.parse(JSON.stringify(pokedexData));
-  const data = pokedexDataClone.sort(() => Math.random() - Math.random()).slice(0, totalRandom);
-
+/**
+ * GET /api/pokemon/viral
+ * */
+router.get('/viral', (req, res) => {
+  if (!pokedexData) {
+    return res.status(500).send({ result: false, message: 'Internal Server Error' });
+  }
+  const data = getRandomNElementsFromArray(pokedexData, 18);
   return res.send({ result: true, data });
 });
 

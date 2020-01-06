@@ -8,14 +8,30 @@ const POKEMON_SPRITES_PATH = '/static/assets/pokemon/sprites/';
 
 class PokemonList extends Component {
   render() {
-    const { t, data, header, showCount = true } = this.props;
+    const { t, isLoading, data, error, header, showCount = true } = this.props;
 
-    if (!data || !data.length)
+    if (isLoading) {
+      return (
+        <div className='pokemon-list-component'>
+          <div className='header'>{header && <h3>{header}</h3>}</div>
+          <div className='list'>
+            <div className='loading'>{t('Loading')}...</div>
+          </div>
+        </div>
+      );
+    }
+
+    if (error) {
+      // show error message if you want
+    }
+
+    if (!data || !data.length) {
       return (
         <div className='pokemon-list-component'>
           <div className='header'>{showCount && <p>{t('ShowingXresult', { count: 0 })}</p>}</div>
         </div>
       );
+    }
 
     const items = data.map(item => {
       const name = i18n.language === 'ja' ? item.name.japanese : item.name.english;

@@ -1,5 +1,5 @@
 {
-  "Hello": "こんにちは",
+  "Loading": "ローディング中",
   "Home": "トップ",
   "About": "サイトについて",
   "Help": "ヘルプ",
@@ -8,7 +8,7 @@
   "Search": "キーワードから探す",
   "Tags": "タグ",
   "Type": "タイプ",
-  "Most View Pokémons": "最も見られましたPokémons",
+  "Most Viewed Pokémons": "最も見られましたPokémons",
   "Viral Pokémons": "急上昇Pokémons",
   "No result": "見つかりません",
   "ShowingXresult": "{{count}}件を表示",

@@ -1,24 +1,18 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { withTranslation } from '../src/helpers/i18n';
+import { getMostViewedPokemonList, getViralPokemonList } from '../src/store/actions/lists';
 import Head from 'next/head';
 import SearchAreaContainer from '../src/container-components/search-area';
-import { listsService } from '../src/services/lists-service';
 import PokemonList from '../src/visual-components/pokemon-list';
 
 class Index extends React.Component {
   isUnMounted = false;
-  state = {
-    viralPokemons: []
-  };
 
   async componentDidMount() {
     // this will be rendered in client-side
     // for server-side render, use getInitialProps
-    // you can fetch and manipulate data as local state or use redux
-    const viral = await listsService.getViralList();
-    if (viral && viral.data && !this.isUnMounted) {
-      this.setState({ viralPokemons: viral.data });
-    }
+    this.props.dispatch(getViralPokemonList());
   }
 
   componentWillUnmount() {
@@ -26,9 +20,17 @@ class Index extends React.Component {
   }
 
   render() {
-    const { t, mostViewPokemon } = this.props;
-    const { viralPokemons } = this.state;
+    const {
+      t,
+      mostViewedPokemonListIsLoading,
+      mostViewedPokemonListData,
+      mostViewedPokemonListError,
+      viralPokemonListIsLoading,
+      viralPokemonListData,
+      viralPokemonListError
+    } = this.props;
     const title = 'Pokémon - Catch them all!!';
+
     return (
       <>
         <Head>
@@ -40,12 +42,23 @@ class Index extends React.Component {
         </div>
 
         <SearchAreaContainer />
-
         <br />
 
-        <PokemonList data={mostViewPokemon} header={t('Most View Pokémons')} showCount={false} />
+        <PokemonList
+          data={mostViewedPokemonListData}
+          isLoading={mostViewedPokemonListIsLoading}
+          error={mostViewedPokemonListError}
+          header={t('Most Viewed Pokémons')}
+          showCount={false}
+        />
 
-        <PokemonList data={viralPokemons} header={t('Viral Pokémons')} showCount={false} />
+        <PokemonList
+          data={viralPokemonListData}
+          isLoading={viralPokemonListIsLoading}
+          error={viralPokemonListError}
+          header={t('Viral Pokémons')}
+          showCount={false}
+        />
       </>
     );
   }
@@ -53,14 +66,18 @@ class Index extends React.Component {
 
 Index.getInitialProps = async function(context) {
   const namespacesRequired = ['common'];
-
-  const mostView = await listsService.getMostViewList();
-  let mostViewPokemon = [];
-  if (mostView && mostView.data) {
-    mostViewPokemon = mostView.data;
-  }
-
-  return { namespacesRequired, mostViewPokemon };
+  await context.store.dispatch(getMostViewedPokemonList());
+  return { namespacesRequired };
 };
 
-export default withTranslation()(Index);
+const mapStateToProps = state => ({
+  mostViewedPokemonListIsLoading: state.mostViewedPokemonList.isLoading,
+  mostViewedPokemonListData: state.mostViewedPokemonList.data,
+  mostViewedPokemonListError: state.mostViewedPokemonList.error,
+
+  viralPokemonListIsLoading: state.viralPokemonList.isLoading,
+  viralPokemonListData: state.viralPokemonList.data,
+  viralPokemonListError: state.viralPokemonList.error
+});
+
+export default connect(mapStateToProps)(withTranslation()(Index));

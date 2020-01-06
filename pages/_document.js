@@ -12,7 +12,7 @@ class MyDocument extends Document {
           <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no' />
           <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat' />
           <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway' />
-          <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet"></link>
+          <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap'></link>
           <link rel='icon' type='image/x-icon' href='/static/assets/images/favicon.ico?v=1' />
           <link
             rel='stylesheet'
