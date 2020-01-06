@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import { i18n, withTranslation } from '../../helpers/i18n';
+import { withTranslation } from '../../helpers/i18n';
 import Link from 'next/link';
 import './style.less';
 
-const POKEMON_THUMBNAILS_PATH = '/static/assets/pokemon/thumbnails/';
 const POKEMON_SPRITES_PATH = '/static/assets/pokemon/sprites/';
 
 class PokemonList extends Component {
   render() {
-    const { t, isLoading, data, error, header, showCount = true } = this.props;
+    const { t, lang, isLoading, data, error, header, showCount = true } = this.props;
 
     if (isLoading) {
       return (
@@ -34,7 +33,7 @@ class PokemonList extends Component {
     }
 
     const items = data.map(item => {
-      const name = i18n.language === 'ja' ? item.name.japanese : item.name.english;
+      const name = lang === 'ja' ? item.name.japanese : item.name.english;
       return (
         <div key={item.id} className='pokemon-card'>
           <Link as={`/pokemons/${item.id}`} href={`/pokemons?id=${item.id}`}>

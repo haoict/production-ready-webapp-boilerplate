@@ -12,7 +12,7 @@ class SearchAreaContainer extends Component {
   };
 
   render() {
-    const { t, searchPokemonName, isLoading, data, error } = this.props;
+    const { t, lang, searchPokemonName, isLoading, data, error } = this.props;
     return (
       <SearchArea
         searchPokemonName={searchPokemonName}
@@ -20,6 +20,7 @@ class SearchAreaContainer extends Component {
         data={data}
         error={error}
         onSuggestItemClick={this.onSuggestItemClick}
+        lang={lang}
       />
     );
   }

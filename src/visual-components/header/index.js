@@ -23,8 +23,10 @@ class Header extends Component {
             </a>
           </Link>
         </div>
-        <div className='user' onClick={() => alert('Login feature comming soon')}>
-          <i className='fa fa-user'></i>
+        <div className='github'>
+          <a href='https://github.com/haoict/production-ready-webapp-boilerplate'>
+            <i className='fab fa-github'></i>
+          </a>
         </div>
       </header>
     );

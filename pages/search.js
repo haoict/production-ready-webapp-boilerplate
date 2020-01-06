@@ -11,14 +11,14 @@ class Search extends React.Component {
   }
 
   render() {
-    const { t, isLoading, data, error } = this.props;
+    const { t, lang, isLoading, data, error } = this.props;
     const title = t('Search');
     return (
       <>
         <Head>
           <title>{title}</title>
         </Head>
-        <PokemonList isLoading={isLoading} data={data} error={error} />
+        <PokemonList isLoading={isLoading} data={data} error={error} lang={lang} />
       </>
     );
   }
@@ -27,7 +27,12 @@ class Search extends React.Component {
 Search.getInitialProps = async function(context) {
   const { keyword } = context.query;
   const namespacesRequired = ['common'];
-  await context.store.dispatch(searchPokemonName(keyword, true));
+  if (context.req) {
+    // if server side, wait for the request to finish, because we have to return html with full data
+    await context.store.dispatch(searchPokemonName(keyword, true));
+  } else {
+    context.store.dispatch(searchPokemonName(keyword, true));
+  }
   return { namespacesRequired };
 };
 

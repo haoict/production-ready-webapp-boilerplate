@@ -6,7 +6,7 @@ import './style.less';
 
 class Footer extends Component {
   render() {
-    const { t } = this.props;
+    const { t, lang } = this.props;
 
     return (
       <footer>
@@ -31,7 +31,7 @@ class Footer extends Component {
         <div className='bottom'>
           <div className='copyright'>© 2020</div>
           <div>
-            <LanguageSwitcher />
+            <LanguageSwitcher lang={lang} />
           </div>
         </div>
       </footer>

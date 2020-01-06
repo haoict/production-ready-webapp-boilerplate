@@ -47,7 +47,7 @@ class SearchArea extends Component {
   };
 
   render() {
-    const { t, isLoading, data, onSuggestItemClick } = this.props;
+    const { t, lang, isLoading, data, onSuggestItemClick } = this.props;
     const { searchText } = this.state;
 
     return (
@@ -73,7 +73,7 @@ class SearchArea extends Component {
           {!this.delayTimer && !isLoading && searchText && (!data || !data.length) && (
             <div className='indicate-text'>{t('No result')}</div>
           )}
-          <Suggestion data={data} onSuggestItemClick={onSuggestItemClick} />
+          <Suggestion data={data} onSuggestItemClick={onSuggestItemClick} lang={lang} />
         </form>
       </div>
     );

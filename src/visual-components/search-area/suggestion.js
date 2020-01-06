@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { i18n, withTranslation } from '../../helpers/i18n';
+import { withTranslation } from '../../helpers/i18n';
 import './suggestion-style.less';
 
 const POKEMON_THUMBNAILS_PATH = '/static/assets/pokemon/thumbnails/';
@@ -7,12 +7,12 @@ const POKEMON_SPRITES_PATH = '/static/assets/pokemon/sprites/';
 
 class Suggestion extends Component {
   render() {
-    const { t, data, onSuggestItemClick } = this.props;
+    const { t, lang, data, onSuggestItemClick } = this.props;
 
     if (!data || !data.length) return null;
 
     const items = data.map(item => {
-      const name = i18n.language === 'ja' ? item.name.japanese : item.name.english;
+      const name = lang === 'ja' ? item.name.japanese : item.name.english;
       return (
         <div
           key={item.id}

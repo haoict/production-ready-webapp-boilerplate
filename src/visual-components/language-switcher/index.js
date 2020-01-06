@@ -39,21 +39,22 @@ const languageOptions = [];
 languages.forEach(language => {
   if (language.enable)
     languageOptions.push(
-      //selected={i18n.language === language.key}
       <option value={language.key} key={language.key}>
         {language.name}
       </option>
     );
 });
 
-const LanguageSwitcher = () => {
+const LanguageSwitcher = props => {
+  const { lang } = props;
+
   const onChangeLang = key => {
     i18n.changeLanguage(key);
   };
 
   return (
     <div className='language-switcher-component'>
-      <select value={i18n.language} onChange={e => onChangeLang(e.target.value)}>
+      <select value={lang} onChange={e => onChangeLang(e.target.value)}>
         {languageOptions}
       </select>
     </div>

@@ -22,6 +22,7 @@ class Index extends React.Component {
   render() {
     const {
       t,
+      lang,
       mostViewedPokemonListIsLoading,
       mostViewedPokemonListData,
       mostViewedPokemonListError,
@@ -41,10 +42,11 @@ class Index extends React.Component {
           <img src='/static/assets/images/pokedex-logo.png' alt='logo' style={{ width: '100%' }} />
         </div>
 
-        <SearchAreaContainer />
+        <SearchAreaContainer lang={lang} />
         <br />
 
         <PokemonList
+          lang={lang}
           data={mostViewedPokemonListData}
           isLoading={mostViewedPokemonListIsLoading}
           error={mostViewedPokemonListError}
@@ -53,6 +55,7 @@ class Index extends React.Component {
         />
 
         <PokemonList
+          lang={lang}
           data={viralPokemonListData}
           isLoading={viralPokemonListIsLoading}
           error={viralPokemonListError}

@@ -15,4 +15,6 @@ const options = {
   keySeparator: '::'
 };
 
-module.exports = new NextI18Next(options);
+const nextI18NextInstance = new NextI18Next(options);
+
+module.exports = { ...nextI18NextInstance };

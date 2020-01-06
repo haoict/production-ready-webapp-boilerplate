@@ -7,11 +7,12 @@ import '../shared/base.less';
 
 class Layout extends Component {
   render() {
+    const { lang } = this.props;
     return (
       <>
-        <Header />
+        <Header lang={lang} />
         <main>{this.props.children}</main>
-        <Footer />
+        <Footer lang={lang} />
       </>
     );
   }
