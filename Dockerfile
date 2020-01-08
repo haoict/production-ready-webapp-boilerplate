@@ -1,11 +1,17 @@
 FROM node:12
 
-# Create app directory
+# Set the working directory
 WORKDIR /usr/src/app
-COPY . .
 
-# Deploy node app
+# Copy package.json file
+COPY package.json ./
+
+# Install dependencies
 RUN yarn
 RUN yarn build
 
+# Copy all files
+COPY . .
+
+# Start the app
 CMD yarn start
