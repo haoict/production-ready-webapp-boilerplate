@@ -10,15 +10,7 @@ class MyDocument extends Document {
         <Head>
           <meta charSet='utf-8' />
           <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no' />
-          <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat' />
-          <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway' />
-          <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap'></link>
           <link rel='icon' type='image/x-icon' href='/static/assets/images/favicon.ico?v=1' />
-          <link
-            rel='stylesheet'
-            type='text/css'
-            href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css'
-          />
           <script
             dangerouslySetInnerHTML={{
               __html: `window.apiUrl="${envConfig.app.apiUrl}"`
@@ -28,6 +20,13 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+
+          {/* Move un-needed render-blocking css or script here to improve performance (Google Pagespeed Insight) */}
+          <link
+            rel='stylesheet'
+            type='text/css'
+            href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css'
+          />
         </body>
       </Html>
     );
