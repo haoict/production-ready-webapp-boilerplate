@@ -4,14 +4,15 @@ FROM node:12
 WORKDIR /usr/src/app
 
 # Copy package.json file
-COPY package.json ./
+COPY package.json yarn.lock ./
 
 # Install dependencies
 RUN yarn
-RUN yarn build
 
 # Copy all files
 COPY . .
+
+RUN yarn build
 
 # Start the app
 CMD yarn start
