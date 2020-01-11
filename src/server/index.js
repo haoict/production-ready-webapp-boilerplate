@@ -9,7 +9,7 @@ const path = require('path');
 const compression = require('compression');
 const helmet = require('helmet');
 const nextI18NextMiddleware = require('next-i18next/middleware').default;
-const nextI18next = require('../../src/helpers/i18n');
+const { nextI18NextInstance } = require('../../src/helpers/i18n');
 const envConfig = require('../config/env-config');
 const { logger } = require('../helpers/logger');
 const cookieParser = require('cookie-parser');
@@ -29,7 +29,7 @@ server.use(cookieParser());
 /**
  * next-i18next middleware
  */
-server.use(nextI18NextMiddleware(nextI18next));
+server.use(nextI18NextMiddleware(nextI18NextInstance));
 
 /**
  * DEFINE CACHE

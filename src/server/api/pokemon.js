@@ -104,6 +104,5 @@ router.get('/:id', (req, res) => {
   }
 
   const data = pokedexData.find(c => c.id.toString() === req.params.id);
-
   return res.send({ result: true, data });
 });

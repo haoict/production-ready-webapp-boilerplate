@@ -9,9 +9,12 @@
     "dev": "NODE_ENV=development node src/server/index.js",
     "build": "next build",
     "start": "NODE_ENV=production node src/server/index.js",
-    "analyze": "ANALYZE=1 next build"
+    "analyze": "ANALYZE=1 next build",
+    "storybook": "start-storybook -s ./public -p 9090",
+    "build-storybook": "build-storybook -c .storybook -o built-storybook"
   },
   "dependencies": {
+    "@storybook/react": "^5.3.0",
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-less": "^1.0.1",
     "axios": "^0.19.0",
@@ -36,6 +39,9 @@
     "winston-daily-rotate-file": "^4.4.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "babel-loader": "^8.0.6",
+    "core-js": "^2",
     "eslint": "^6.7.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "webpack-bundle-analyzer": "^3.6.0"

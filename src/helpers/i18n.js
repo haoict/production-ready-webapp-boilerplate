@@ -17,4 +17,15 @@ const options = {
 
 const nextI18NextInstance = new NextI18Next(options);
 
-module.exports = { ...nextI18NextInstance };
+const {
+  i18n,
+  withTranslation,
+  appWithTranslation,
+} = nextI18NextInstance;
+
+module.exports = {
+  i18n,
+  withTranslation,
+  appWithTranslation,
+  nextI18NextInstance
+};
