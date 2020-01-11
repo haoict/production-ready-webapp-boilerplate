@@ -3,5 +3,11 @@ node_modules
 dist
 *.log
 logs
+.DS_Store
 # .env
 .next
+/built-storybook
+
+# testing
+*/**/actual
+*/**/diff

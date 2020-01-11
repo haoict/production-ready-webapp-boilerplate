@@ -12,7 +12,7 @@ class PokemonList extends Component {
     if (isLoading) {
       return (
         <div className='pokemon-list-component'>
-          <div className='header'>{header && <h3>{header}</h3>}</div>
+          <div className='title'>{title && <h3>{title}</h3>}</div>
           <div className='list'>
             <div className='loading'>Loading...</div>
           </div>
