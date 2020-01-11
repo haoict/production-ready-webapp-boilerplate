@@ -5,7 +5,7 @@ import './style.less';
 class Footer extends Component {
   render() {
     return (
-      <footer>
+      <footer className='footer-component'>
         <div className='links'>
           <Link as='/about' href='/about'>
             <a>About</a>

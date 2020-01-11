@@ -10,9 +10,15 @@
     "build": "next build",
     "start": "NODE_ENV=production node src/server/index.js",
     "analyze": "ANALYZE=1 next build",
+    "storybook": "start-storybook -s ./public -p 9090",
+    "build-storybook": "build-storybook -c .storybook -o built-storybook",
+    "vr-test:chrome": "wdio run ./wdio/chrome.conf.js --spec",
+    "vr-test:chrome:sp": "wdio run ./wdio/smartphone.chrome.conf.js --spec",
+    "vr-test": "./.scripts/vr-test.sh",
     "stylelint": "stylelint src/**/*.less"
   },
   "dependencies": {
+    "@storybook/react": "^5.3.0",
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-less": "^1.0.1",
     "axios": "^0.19.0",
@@ -37,10 +43,27 @@
   },
   "devDependencies": {
     "all-contributors-cli": "^6.13.0",
+    "@babel/cli": "^7.8.0",
+    "@babel/core": "^7.8.0",
+    "@babel/preset-env": "^7.8.0",
+    "@babel/register": "^7.8.0",
+    "@wdio/cli": "^5.18.5",
+    "@wdio/local-runner": "^5.18.5",
+    "@wdio/mocha-framework": "^5.16.15",
+    "@wdio/spec-reporter": "^5.16.11",
+    "@wdio/sync": "^5.18.5",
+    "babel-loader": "^8.0.6",
+    "chromedriver": "^78.0.1",
+    "core-js": "^2",
+    "css-modules-require-hook": "^4.2.3",
     "eslint": "^6.7.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "stylelint": "^13.0.0",
     "stylelint-config-recommended": "^3.0.0",
+    "ip": "^1.1.5",
+    "wdio-chromedriver-service": "^5.0.2",
+    "wdio-image-comparison-service": "^1.9.0",
+    "webdriverio": "^5.18.5",
     "webpack-bundle-analyzer": "^3.6.0"
   }
 }

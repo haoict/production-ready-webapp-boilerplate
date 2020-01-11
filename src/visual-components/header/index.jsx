@@ -9,7 +9,7 @@ const APP_ICON = '/static/assets/images/pokedex-app-icon.png';
 class Header extends Component {
   render() {
     return (
-      <header>
+      <header className='header-component'>
         <div className='back' onClick={() => Router.back()}>
           <i className='fas fa-chevron-left'></i>
         </div>

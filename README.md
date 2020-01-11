@@ -7,16 +7,25 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/haoict/production-ready-webapp-boilerplate.svg)](https://greenkeeper.io/)
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <!-- vscode-markdown-toc -->
-
-- [About](#About)
-- [Motivation](#Motivation)
-- [Features](#Features)
-- [Setup & Documentation](#SetupDocumentation)
-- [License](#License)
+* [About](#About)
+* [Motivation](#Motivation)
+* [Features](#Features)
+* [Setup & Documentation](#SetupDocumentation)
+* [Deploying on Production](#DeployingonProduction)
+	* [Directly run](#Directlyrun)
+	* [Docker support](#Dockersupport)
+* [Advance](#Advance)
+	* [Storybook](#Storybook)
+	* [VR-testing (visual regression testing)](#VR-testingvisualregressiontesting)
+		* [Debug visual regression test](#Debugvisualregressiontest)
+* [License](#License)
+* [Contributors ✨](#Contributors)
 
 <!-- vscode-markdown-toc-config
 	numbering=false
@@ -26,7 +35,7 @@
 
 ## <a name='About'></a>About
 
-🚀 A well-structured production ready modern web application boilerplate (Single Page Application with Server Side Render to boost SEO). With Next.js, React, Redux, Express.js for web server and build-in API, Less, Css, Axios, EnvConfig and more 🚀
+🚀 A well-structured production ready modern web application boilerplate (Single Page Application with Server Side Render to boost SEO). With Next.js, React, Redux, Express.js, Less, Axios, Request Caching, EnvConfig, Storybook and more 🚀
 
 Demo: https://pokemon.nless.pro
 
@@ -53,11 +62,12 @@ This project provides a lot of features out of the box. Here's an overview of th
 - **Redux** - A predictable state container for JavaScript apps.
 - **Express.js**- A minimal and flexible Node.js web application framework that handles server-side rendering and integrates with Next.js.
 - **Less** - CSS preprocessor, which adds special features such as variables, nested rules and mixins (sometimes referred to as syntactic sugar) into regular CSS.
+- **Axios** - Promise based HTTP client. Integrated with axios-cache-adapter to cache the reponse to improve performance
 - **Docker** - A tool designed to make it easier to create, deploy, and run applications by using containers.
 - **Jest** - Javascript testing framework , created by developers who created React.
+- **Storybook** - An open source tool for developing UI components in isolation for React, Vue, and Angular. It makes building stunning UIs organized and efficient
 - **Babel** - The compiler for next generation JavaScript.
 - **ESLint** - The pluggable linting utility.
-- **Reverse Proxy** - Lightweight server for proxying API requests.
 - **Bundler Analyzer** - Visualize the size of webpack output files with an interactive zoomable treemap.
 - **Jest** - Javascript testing framework , created by developers who created React.
 - **dotenv** - Expose environment variables to the runtime config
@@ -72,13 +82,19 @@ This project provides a lot of features out of the box. Here's an overview of th
 git clone https://github.com/haoict/production-ready-webapp-boilerplate.git
 ```
 
-2. Install the dependencies:
+2. Checkout master branch for complete simplest working version:
 
 ```
-yarn install (or npm install)
+git checkout master
 ```
 
-3. Start the development server:
+3. Install the dependencies:
+
+```
+yarn install (or npm install if you prefer npm, remember to remove yarn.lock first)
+```
+
+4. Start the development server:
 
 ```
 yarn dev
@@ -87,6 +103,115 @@ yarn dev
 Launch http://localhost:3001
 
 (Change .env file for customize host and port)
+
+## <a name='DeployingonProduction'></a>Deploying on Production
+
+### <a name='Directlyrun'></a>Directly run
+
+1. Build with production optimization
+
+```
+yarn build
+```
+
+2. Just Start
+
+```
+yarn start
+```
+
+### <a name='Dockersupport'></a>Docker support
+
+You can build and run production with docker
+
+1. Build docker image
+
+```
+docker build . -t production-ready-webapp-boilerplate
+```
+
+2. Run it with your prefer port
+
+```
+docker run -d -p 3001:3001 production-ready-webapp-boilerplate
+```
+
+## <a name='Advance'></a>Advance
+
+### <a name='Storybook'></a>Storybook
+
+2. Checkout develop branch for latest, full features code:
+
+```
+git checkout develop
+```
+
+1. Start the storybook:
+
+```
+yarn storybook
+```
+
+Launch http://localhost:9090
+
+### <a name='VR-testingvisualregressiontesting'></a>VR-testing (visual regression testing)
+
+0. Start storybook
+
+Follow above step
+
+1. Start Selenium of web drivers
+
+```bash
+docker run --name storybook-wdio-chrome -d -p 4444:4444 -p 5900:5900 selenium/standalone-chrome-debug
+```
+
+if error `Bind for 0.0.0.0:5900 failed: port is already allocated` comes, you can change that port to other number, like 5901 (`docker run --name storybook-wdio-chrome -d -p 4444:4444 -p 5901:5900 selenium/standalone-chrome-debug`)
+
+2. Run test
+
+**Desktop**
+
+```bash
+yarn vr-test:chrome src/components/<component-name>/stories/vr-test/index.spec.ts
+```
+
+**Smartphone**
+
+```bash
+yarn vr-test:chrome:sp src/components/<component-name>/stories/vr-test/index.spec.ts
+```
+
+**Both Desktop and Smartphone**
+
+```bash
+yarn vr-test src/components/<component-name>/stories/vr-test/index.spec.ts
+```
+
+**Run all tests**
+
+```bash
+yarn vr-test
+```
+
+#### <a name='Debugvisualregressiontest'></a>Debug visual regression test
+
+##### Mac
+
+**Screen Sharing**
+
+To debug visual regression testing
+
+1. Open the `Screen Sharing`
+```bash
+Hostname: YOUR_MACHINE_IP:5900 (normally 127.0.0.1)
+Password: secret
+```
+2. Run test
+3. Navigate to `Screen Sharing` to see the step by step for running the test
+
+
+Big thank to [davidnguyen179](https://github.com/davidnguyen179), you can check his work about React + Storybook + Visual Regression Testing at: [storybook-wdio](https://github.com/davidnguyen179/storybook-wdio)
 
 ## <a name='License'></a>License
 
@@ -112,6 +237,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

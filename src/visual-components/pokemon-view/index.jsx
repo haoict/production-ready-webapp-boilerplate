@@ -41,7 +41,7 @@ class PokemonView extends Component {
     }
 
     return (
-      <>
+      <div className='container'>
         <Head>
           <title>{data.name.english}</title>
         </Head>
@@ -59,7 +59,7 @@ class PokemonView extends Component {
             <div className='stats'>{stats}</div>
           </div>
         </div>
-      </>
+      </div>
     );
   }
 }
