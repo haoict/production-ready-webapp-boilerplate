@@ -14,7 +14,7 @@
     "build-storybook": "build-storybook -c .storybook -o built-storybook",
     "vr-test:chrome": "wdio run ./wdio/chrome.conf.js --spec",
     "vr-test:chrome:sp": "wdio run ./wdio/smartphone.chrome.conf.js --spec",
-    "vr-test": "npm run vr-test:chrome && npm run vr-test:chrome:sp",
+    "vr-test": "yarn vr-test:chrome && yarn vr-test:chrome:sp",
     "stylelint": "stylelint src/**/*.less"
   },
   "dependencies": {

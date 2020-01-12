@@ -50,7 +50,7 @@ class Index extends React.Component {
           data={mostViewedPokemonListData}
           isLoading={mostViewedPokemonListIsLoading}
           error={mostViewedPokemonListError}
-          header={t('Most Viewed Pokémons')}
+          title={t('Most Viewed Pokémons')}
           showCount={false}
         />
 
@@ -59,7 +59,7 @@ class Index extends React.Component {
           data={viralPokemonListData}
           isLoading={viralPokemonListIsLoading}
           error={viralPokemonListError}
-          header={t('Viral Pokémons')}
+          title={t('Viral Pokémons')}
           showCount={false}
         />
       </>
