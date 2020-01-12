@@ -8,11 +8,11 @@ class Layout extends Component {
   render() {
     const { lang } = this.props;
     return (
-      <>
+      <div className="container">
         <Header lang={lang} />
         <main>{this.props.children}</main>
         <Footer lang={lang} />
-      </>
+      </div>
     );
   }
 }

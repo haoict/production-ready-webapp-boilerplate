@@ -44,7 +44,7 @@ class PokemonView extends Component {
     const name = lang === 'ja' ? data.name.japanese : data.name.english;
 
     return (
-      <>
+      <div className='container'>
         <Head>
           <title>{name}</title>
         </Head>
@@ -64,7 +64,7 @@ class PokemonView extends Component {
             <div className='stats'>{stats}</div>
           </div>
         </div>
-      </>
+      </div>
     );
   }
 }
