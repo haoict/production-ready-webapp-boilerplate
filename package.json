@@ -9,7 +9,8 @@
     "dev": "NODE_ENV=development node src/server/index.js",
     "build": "next build",
     "start": "NODE_ENV=production node src/server/index.js",
-    "analyze": "ANALYZE=1 next build"
+    "analyze": "ANALYZE=1 next build",
+    "stylelint": "stylelint src/**/*.less"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
@@ -38,6 +39,8 @@
     "all-contributors-cli": "^6.13.0",
     "eslint": "^6.7.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
+    "stylelint": "^13.0.0",
+    "stylelint-config-recommended": "^3.0.0",
     "webpack-bundle-analyzer": "^3.6.0"
   }
 }
