@@ -9,7 +9,7 @@ class Footer extends Component {
     const { t, lang } = this.props;
 
     return (
-      <footer>
+      <footer className='container'>
         <div className='links'>
           <Link as='/about' href='/about'>
             <a>{t('About')}</a>

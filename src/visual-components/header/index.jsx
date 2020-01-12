@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
-import { connect } from 'react-redux';
 import { withTranslation } from '../../helpers/i18n';
 import Router from 'next/router';
 import './style.less';
@@ -9,10 +8,8 @@ const APP_ICON = '/static/assets/images/pokedex-app-icon.png';
 
 class Header extends Component {
   render() {
-    const { t } = this.props;
-
     return (
-      <header>
+      <header className='header'>
         <div className='back' onClick={() => Router.back()}>
           <i className='fas fa-chevron-left'></i>
         </div>
@@ -33,6 +30,4 @@ class Header extends Component {
   }
 }
 
-const mapStateToProps = state => ({});
-
-export default connect(mapStateToProps)(withTranslation()(Header));
+export default withTranslation()(Header);
