@@ -15,6 +15,7 @@
     "vr-test:chrome": "wdio run ./wdio/chrome.conf.js --spec",
     "vr-test:chrome:sp": "wdio run ./wdio/smartphone.chrome.conf.js --spec",
     "vr-test": "npm run vr-test:chrome && npm run vr-test:chrome:sp"
+    "stylelint": "stylelint src/**/*.less"
   },
   "dependencies": {
     "@storybook/react": "^5.3.0",
@@ -61,6 +62,8 @@
     "wdio-chromedriver-service": "^5.0.2",
     "wdio-image-comparison-service": "^1.9.0",
     "webdriverio": "^5.18.5",
+    "stylelint": "^13.0.0",
+    "stylelint-config-recommended": "^3.0.0",
     "webpack-bundle-analyzer": "^3.6.0"
   }
 }
