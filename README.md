@@ -6,6 +6,10 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/haoict/production-ready-webapp-boilerplate/blob/master/LICENSE)
 [![Greenkeeper badge](https://badges.greenkeeper.io/haoict/production-ready-webapp-boilerplate.svg)](https://greenkeeper.io/)
 
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+
 <!-- vscode-markdown-toc -->
 
 - [About](#About)
@@ -87,3 +91,27 @@ Launch http://localhost:3001
 ## <a name='License'></a>License
 
 Licensed under the MIT License, Copyright © 2020-present Hao Nguyen <hao.ict56@gmail.com>
+
+## <a name='Contributors'></a>Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="http://haoict.github.io"><img src="https://avatars1.githubusercontent.com/u/7247750?v=4" width="100px;" alt=""/><br /><sub><b>Nguyen Van Hao</b></sub></a><br /><a href="https://github.com/haoict/production-ready-webapp-boilerplate/commits?author=haoict" title="Documentation">📖</a> <a href="https://github.com/haoict/production-ready-webapp-boilerplate/commits?author=haoict" title="Code">💻</a> <a href="https://github.com/haoict/production-ready-webapp-boilerplate/issues?q=author%3Ahaoict" title="Bug reports">🐛</a> <a href="#ideas-haoict" title="Ideas, Planning, & Feedback">🤔</a> <a href="#design-haoict" title="Design">🎨</a> <a href="#translation-haoict" title="Translation">🌍</a> <a href="https://github.com/haoict/production-ready-webapp-boilerplate/pulls?q=is%3Apr+reviewed-by%3Ahaoict" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="https://www.dzungnguyen.dev"><img src="https://avatars3.githubusercontent.com/u/6290720?v=4" width="100px;" alt=""/><br /><sub><b>David Nguyen</b></sub></a><br /><a href="https://github.com/haoict/production-ready-webapp-boilerplate/commits?author=davidnguyen179" title="Code">💻</a> <a href="https://github.com/haoict/production-ready-webapp-boilerplate/issues?q=author%3Adavidnguyen179" title="Bug reports">🐛</a> <a href="#ideas-davidnguyen179" title="Ideas, Planning, & Feedback">🤔</a> <a href="#plugin-davidnguyen179" title="Plugin/utility libraries">🔌</a></td>
+    <td align="center"><a href="https://github.com/duongkimngoc"><img src="https://avatars2.githubusercontent.com/u/6060927?v=4" width="100px;" alt=""/><br /><sub><b>NGOC Duong Kim</b></sub></a><br /><a href="https://github.com/haoict/production-ready-webapp-boilerplate/commits?author=duongkimngoc" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/3BenLee"><img src="https://avatars2.githubusercontent.com/u/35267414?v=4" width="100px;" alt=""/><br /><sub><b>Ben Lee</b></sub></a><br /><a href="https://github.com/haoict/production-ready-webapp-boilerplate/commits?author=3BenLee" title="Code">💻</a> <a href="#plugin-3BenLee" title="Plugin/utility libraries">🔌</a></td>
+    <td align="center"><a href="https://github.com/pranabmitra"><img src="https://avatars2.githubusercontent.com/u/1366712?v=4" width="100px;" alt=""/><br /><sub><b>Pranab Mitra</b></sub></a><br /><a href="https://github.com/haoict/production-ready-webapp-boilerplate/commits?author=pranabmitra" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Nhomltm03"><img src="https://avatars0.githubusercontent.com/u/45044050?v=4" width="100px;" alt=""/><br /><sub><b>NguyenThanhDat</b></sub></a><br /><a href="https://github.com/haoict/production-ready-webapp-boilerplate/commits?author=Nhomltm03" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

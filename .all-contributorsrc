@@ -1,0 +1,79 @@
+{
+  "projectName": "production-ready-webapp-boilerplate",
+  "projectOwner": "haoict",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "none",
+  "contributors": [
+    {
+      "login": "haoict",
+      "name": "Nguyen Van Hao",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/7247750?v=4",
+      "profile": "http://haoict.github.io",
+      "contributions": [
+        "doc",
+        "code",
+        "bug",
+        "ideas",
+        "design",
+        "translation",
+        "review"
+      ]
+    },
+    {
+      "login": "davidnguyen179",
+      "name": "David Nguyen",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/6290720?v=4",
+      "profile": "https://www.dzungnguyen.dev",
+      "contributions": [
+        "code",
+        "bug",
+        "ideas",
+        "plugin"
+      ]
+    },
+    {
+      "login": "duongkimngoc",
+      "name": "NGOC Duong Kim",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/6060927?v=4",
+      "profile": "https://github.com/duongkimngoc",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "3BenLee",
+      "name": "Ben Lee",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/35267414?v=4",
+      "profile": "https://github.com/3BenLee",
+      "contributions": [
+        "code",
+        "plugin"
+      ]
+    },
+    {
+      "login": "pranabmitra",
+      "name": "Pranab Mitra",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1366712?v=4",
+      "profile": "https://github.com/pranabmitra",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Nhomltm03",
+      "name": "NguyenThanhDat",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/45044050?v=4",
+      "profile": "https://github.com/Nhomltm03",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
