@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Head from 'next/head';
-import { withTranslation } from '../../helpers/i18n';
 import './style.less';
 
 const POKEMON_IMAGE_PATH = '/static/assets/pokemon/images/';
@@ -12,7 +11,7 @@ class PokemonView extends Component {
     if (isLoading) {
       return (
         <div className='pokemon-view-component'>
-          <div className='loading'>{t('Loading')}...</div>
+          <div className='loading'>Loading...</div>
         </div>
       );
     }
@@ -41,25 +40,21 @@ class PokemonView extends Component {
       }
     }
 
-    const name = lang === 'ja' ? data.name.japanese : data.name.english;
-
     return (
       <>
         <Head>
-          <title>{name}</title>
+          <title>{data.name.english}</title>
         </Head>
         <div className='pokemon-view-component'>
           <div className='image'>
-            <img src={POKEMON_IMAGE_PATH + ('00' + data.id).slice(-3) + '.png'} alt={name} />
+            <img src={POKEMON_IMAGE_PATH + ('00' + data.id).slice(-3) + '.png'} alt={data.name.english} />
           </div>
           <div className='info'>
             <div className='head'>
-              <div className='name'>{name}</div>
+              <div className='name'>{data.name.english}</div>
               <div className='title'>{data.title}</div>
             </div>
-            <div className='types'>
-              {t('Type')}: {types}
-            </div>
+            <div className='types'>Type: {types}</div>
             <div className='description'>{data.description}</div>
             <div className='stats'>{stats}</div>
           </div>
@@ -69,4 +64,4 @@ class PokemonView extends Component {
   }
 }
 
-export default withTranslation()(PokemonView);
+export default PokemonView;

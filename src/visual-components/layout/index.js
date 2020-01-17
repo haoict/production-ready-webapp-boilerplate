@@ -2,24 +2,21 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Header from '../header';
 import Footer from '../footer';
-import { withTranslation } from '../../helpers/i18n';
+
 import '../shared/base.less';
 
 class Layout extends Component {
   render() {
-    const { lang } = this.props;
     return (
       <>
-        <Header lang={lang} />
+        <Header />
         <main>{this.props.children}</main>
-        <Footer lang={lang} />
+        <Footer />
       </>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  // clientConfigs: state.clientConfigs
-});
+const mapStateToProps = state => ({});
 
-export default connect(mapStateToProps)(withTranslation()(Layout));
+export default connect(mapStateToProps)(Layout);

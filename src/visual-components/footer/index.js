@@ -1,42 +1,35 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
-import { withTranslation } from '../../helpers/i18n';
-import LanguageSwitcher from '../language-switcher';
 import './style.less';
 
 class Footer extends Component {
   render() {
-    const { t, lang } = this.props;
-
     return (
       <footer>
         <div className='links'>
           <Link as='/about' href='/about'>
-            <a>{t('About')}</a>
+            <a>About</a>
           </Link>
           ●
           <Link as='/about' href='/about'>
-            <a>{t('Help')}</a>
+            <a>Help</a>
           </Link>
           ●
           <Link as='/about' href='/about'>
-            <a>{t('Privacy')}</a>
+            <a>Privacy</a>
           </Link>
           ●
           <Link as='/about' href='/about'>
-            <a>{t('Terms')}</a>
+            <a>Terms</a>
           </Link>
         </div>
 
         <div className='bottom'>
           <div className='copyright'>© 2020</div>
-          <div>
-            <LanguageSwitcher lang={lang} />
-          </div>
         </div>
       </footer>
     );
   }
 }
 
-export default withTranslation()(Footer);
+export default Footer;

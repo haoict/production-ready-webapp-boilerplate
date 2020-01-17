@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withTranslation } from '../../helpers/i18n';
+
 import Link from 'next/link';
 import './style.less';
 
@@ -7,14 +7,14 @@ const POKEMON_SPRITES_PATH = '/static/assets/pokemon/sprites/';
 
 class PokemonList extends Component {
   render() {
-    const { t, lang, isLoading, data, error, header, showCount = true } = this.props;
+    const { isLoading, data, error, header, showCount = true } = this.props;
 
     if (isLoading) {
       return (
         <div className='pokemon-list-component'>
           <div className='header'>{header && <h3>{header}</h3>}</div>
           <div className='list'>
-            <div className='loading'>{t('Loading')}...</div>
+            <div className='loading'>Loading...</div>
           </div>
         </div>
       );
@@ -27,21 +27,20 @@ class PokemonList extends Component {
     if (!data || !data.length) {
       return (
         <div className='pokemon-list-component'>
-          <div className='header'>{showCount && <p>{t('ShowingXresult', { count: 0 })}</p>}</div>
+          <div className='header'>{showCount && <p>Showing {count} result(s)</p>}</div>
         </div>
       );
     }
 
     const items = data.map(item => {
-      const name = lang === 'ja' ? item.name.japanese : item.name.english;
       return (
         <div key={item.id} className='pokemon-card'>
           <Link as={`/pokemons/${item.id}`} href={`/pokemons?id=${item.id}`}>
             <a>
               <div className='thumbnail'>
-                <img src={POKEMON_SPRITES_PATH + ('00' + item.id).slice(-3) + 'MS.png'} alt={name} />
+                <img src={POKEMON_SPRITES_PATH + ('00' + item.id).slice(-3) + 'MS.png'} alt={item.name.english} />
               </div>
-              <div className='name'>{name}</div>
+              <div className='name'>{item.name.english}</div>
             </a>
           </Link>
         </div>
@@ -52,7 +51,7 @@ class PokemonList extends Component {
       <div className='pokemon-list-component'>
         <div className='header'>
           {header && <h3>{header}</h3>}
-          {showCount && <p>{t('ShowingXresult', { count: items.length })}</p>}
+          {showCount && <p>Showing {items.length} result(s)</p>}
         </div>
         <div className='list'>{items}</div>
       </div>
@@ -60,4 +59,4 @@ class PokemonList extends Component {
   }
 }
 
-export default withTranslation()(PokemonList);
+export default PokemonList;

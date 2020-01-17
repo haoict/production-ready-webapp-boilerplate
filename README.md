@@ -22,7 +22,7 @@
 
 ## <a name='About'></a>About
 
-🚀 A well-structured production ready modern web application boilerplate (Single Page Application with Server Side Render to boost SEO). With Next.js, React, Redux, Express.js for web server and build-in API, Less, Css, Axios, i18n, EnvConfig and more 🚀
+🚀 A well-structured production ready modern web application boilerplate (Single Page Application with Server Side Render to boost SEO). With Next.js, React, Redux, Express.js for web server and build-in API, Less, Css, Axios, EnvConfig and more 🚀
 
 Demo: https://pokemon.nless.pro
 
@@ -50,7 +50,6 @@ This project provides a lot of features out of the box. Here's an overview of th
 - **Express.js**- A minimal and flexible Node.js web application framework that handles server-side rendering and integrates with Next.js.
 - **Less** - CSS preprocessor, which adds special features such as variables, nested rules and mixins (sometimes referred to as syntactic sugar) into regular CSS.
 - **Docker** - A tool designed to make it easier to create, deploy, and run applications by using containers.
-- **next-i18next** - An internationalization-framework which provides a function that takes a key, some options, and returns the value for the current language. Helps you to add language translation support to your app.
 - **Jest** - Javascript testing framework , created by developers who created React.
 - **Babel** - The compiler for next generation JavaScript.
 - **ESLint** - The pluggable linting utility.

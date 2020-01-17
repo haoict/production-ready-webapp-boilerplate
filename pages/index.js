@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { withTranslation } from '../src/helpers/i18n';
 import { getMostViewedPokemonList, getViralPokemonList } from '../src/store/actions/lists';
 import Head from 'next/head';
 import SearchAreaContainer from '../src/container-components/search-area';
@@ -21,8 +20,6 @@ class Index extends React.Component {
 
   render() {
     const {
-      t,
-      lang,
       mostViewedPokemonListIsLoading,
       mostViewedPokemonListData,
       mostViewedPokemonListError,
@@ -42,24 +39,22 @@ class Index extends React.Component {
           <img src='/static/assets/images/pokedex-logo.png' alt='logo' style={{ width: '100%' }} />
         </div>
 
-        <SearchAreaContainer lang={lang} />
+        <SearchAreaContainer />
         <br />
 
         <PokemonList
-          lang={lang}
           data={mostViewedPokemonListData}
           isLoading={mostViewedPokemonListIsLoading}
           error={mostViewedPokemonListError}
-          header={t('Most Viewed Pokémons')}
+          header='Most Viewed Pokémons'
           showCount={false}
         />
 
         <PokemonList
-          lang={lang}
           data={viralPokemonListData}
           isLoading={viralPokemonListIsLoading}
           error={viralPokemonListError}
-          header={t('Viral Pokémons')}
+          header='Viral Pokémons'
           showCount={false}
         />
       </>
@@ -68,9 +63,9 @@ class Index extends React.Component {
 }
 
 Index.getInitialProps = async function(context) {
-  const namespacesRequired = ['common'];
   await context.store.dispatch(getMostViewedPokemonList());
-  return { namespacesRequired };
+
+  return { nothing: '' };
 };
 
 const mapStateToProps = state => ({
@@ -83,4 +78,4 @@ const mapStateToProps = state => ({
   viralPokemonListError: state.viralPokemonList.error
 });
 
-export default connect(mapStateToProps)(withTranslation()(Index));
+export default connect(mapStateToProps)(Index);

@@ -1,5 +1,4 @@
 import React from 'react';
-import { withTranslation } from '../src/helpers/i18n';
 import { connect } from 'react-redux';
 import { searchPokemonName } from '../src/store/actions/search-area';
 import Head from 'next/head';
@@ -11,14 +10,14 @@ class Search extends React.Component {
   }
 
   render() {
-    const { t, lang, isLoading, data, error } = this.props;
-    const title = t('Search');
+    const { isLoading, data, error } = this.props;
+    const title = 'Search';
     return (
       <>
         <Head>
           <title>{title}</title>
         </Head>
-        <PokemonList isLoading={isLoading} data={data} error={error} lang={lang} />
+        <PokemonList isLoading={isLoading} data={data} error={error} />
       </>
     );
   }
@@ -26,14 +25,14 @@ class Search extends React.Component {
 
 Search.getInitialProps = async function(context) {
   const { keyword } = context.query;
-  const namespacesRequired = ['common'];
   if (context.req) {
     // if server side, wait for the request to finish, because we have to return html with full data
     await context.store.dispatch(searchPokemonName(keyword, true));
   } else {
     context.store.dispatch(searchPokemonName(keyword, true));
   }
-  return { namespacesRequired };
+
+  return { nothing: '' };
 };
 
 const mapStateToProps = state => ({
@@ -42,4 +41,4 @@ const mapStateToProps = state => ({
   error: state.searchArea.error
 });
 
-export default connect(mapStateToProps)(withTranslation()(Search));
+export default connect(mapStateToProps)(Search);

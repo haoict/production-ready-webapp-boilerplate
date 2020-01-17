@@ -1,8 +1,7 @@
 import Head from 'next/head';
-import { withTranslation } from '../src/helpers/i18n';
 
 const About = props => {
-  let title = props.t('About');
+  let title = 'About';
   return (
     <>
       <Head>
@@ -19,9 +18,4 @@ const About = props => {
   );
 };
 
-About.getInitialProps = async function(context) {
-  const namespacesRequired = ['common'];
-  return { namespacesRequired };
-};
-
-export default withTranslation()(About);
+export default About;

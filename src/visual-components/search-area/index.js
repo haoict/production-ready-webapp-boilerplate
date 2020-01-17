@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Router from 'next/router';
-import { withTranslation } from '../../helpers/i18n';
 import Suggestion from './suggestion';
 import './style.less';
 
@@ -56,7 +55,7 @@ class SearchArea extends Component {
           <div className='input-field'>
             <input
               type='text'
-              placeholder={t('Search')}
+              placeholder='Search'
               value={searchText}
               onChange={this.onSearchTextChange}
               onFocus={this.onSearchTextChange}
@@ -71,7 +70,7 @@ class SearchArea extends Component {
             <i className='fas fa-search fa-fw' />
           </button>
           {!this.delayTimer && !isLoading && searchText && (!data || !data.length) && (
-            <div className='indicate-text'>{t('No result')}</div>
+            <div className='indicate-text'>No result</div>
           )}
           <Suggestion data={data} onSuggestItemClick={onSuggestItemClick} lang={lang} />
         </form>
@@ -80,4 +79,4 @@ class SearchArea extends Component {
   }
 }
 
-export default withTranslation()(SearchArea);
+export default SearchArea;

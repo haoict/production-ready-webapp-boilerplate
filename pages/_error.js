@@ -1,21 +1,12 @@
 import Link from 'next/link';
-import { withTranslation } from '../src/helpers/i18n';
 
 const Error = props => {
   const { statusCode } = props;
-  let errMsg = '';
+  let errMsg = `An error occurred 😵`;
   if (statusCode) {
-    switch (statusCode) {
-      case 404:
-        errMsg = props.t('ErrorPageMessageServer', { statusCode: statusCode }) + '😵';
-        break;
-      default:
-        errMsg = props.t('ErrorPageMessageServer', { statusCode: statusCode }) + '😵';
-        break;
-    }
-  } else {
-    errMsg = props.t('ErrorPageMessageClient') + '😵';
+    errMsg = `An error occurred. Error code: ${statusCode} 😵`;
   }
+
   return (
     <div className='error-page-container'>
       <h3>{errMsg}</h3>
@@ -30,8 +21,7 @@ const Error = props => {
 
 Error.getInitialProps = function({ res, err }) {
   const statusCode = res ? res.statusCode : err ? err.statusCode : null;
-  const namespacesRequired = ['common'];
-  return { statusCode, namespacesRequired };
+  return { statusCode };
 };
 
-export default withTranslation()(Error);
+export default Error;
