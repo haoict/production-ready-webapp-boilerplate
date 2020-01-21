@@ -1,28 +1,29 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
-import { connect } from 'react-redux';
 import Router from 'next/router';
 import './style.less';
-
-const APP_ICON = '/static/assets/images/pokedex-app-icon.png';
 
 class Header extends Component {
   render() {
     return (
       <header className='header-component'>
         <div className='back' onClick={() => Router.back()}>
-          <i className='fas fa-chevron-left'></i>
+          <svg viewBox='0 0 492 492' width='512'>
+            <path d='M198.608,246.104L382.664,62.04c5.068-5.056,7.856-11.816,7.856-19.024c0-7.212-2.788-13.968-7.856-19.032l-16.128-16.12 C361.476,2.792,354.712,0,347.504,0s-13.964,2.792-19.028,7.864L109.328,227.008c-5.084,5.08-7.868,11.868-7.848,19.084 c-0.02,7.248,2.76,14.028,7.848,19.112l218.944,218.932c5.064,5.072,11.82,7.864,19.032,7.864c7.208,0,13.964-2.792,19.032-7.864 l16.124-16.12c10.492-10.492,10.492-27.572,0-38.06L198.608,246.104z' />
+          </svg>
         </div>
         <div className='home'>
           <Link as='/' href='/'>
             <a href='/'>
-              <img src={APP_ICON} alt='Home'></img>
+              <img src={'/static/assets/images/pokedex-app-icon.png'} alt='Home'></img>
             </a>
           </Link>
         </div>
         <div className='github'>
           <a href='https://github.com/haoict/production-ready-webapp-boilerplate'>
-            <i className='fab fa-github'></i>
+            <svg viewBox='0 0 24 24' width='512'>
+              <path d='m12 .5c-6.63 0-12 5.28-12 11.792 0 5.211 3.438 9.63 8.205 11.188.6.111.82-.254.82-.567 0-.28-.01-1.022-.015-2.005-3.338.711-4.042-1.582-4.042-1.582-.546-1.361-1.335-1.725-1.335-1.725-1.087-.731.084-.716.084-.716 1.205.082 1.838 1.215 1.838 1.215 1.07 1.803 2.809 1.282 3.495.981.108-.763.417-1.282.76-1.577-2.665-.295-5.466-1.309-5.466-5.827 0-1.287.465-2.339 1.235-3.164-.135-.298-.54-1.497.105-3.121 0 0 1.005-.316 3.3 1.209.96-.262 1.98-.392 3-.398 1.02.006 2.04.136 3 .398 2.28-1.525 3.285-1.209 3.285-1.209.645 1.624.24 2.823.12 3.121.765.825 1.23 1.877 1.23 3.164 0 4.53-2.805 5.527-5.475 5.817.42.354.81 1.077.81 2.182 0 1.578-.015 2.846-.015 3.229 0 .309.21.678.825.56 4.801-1.548 8.236-5.97 8.236-11.173 0-6.512-5.373-11.792-12-11.792z' />
+            </svg>
           </a>
         </div>
       </header>
@@ -30,6 +31,4 @@ class Header extends Component {
   }
 }
 
-const mapStateToProps = state => ({});
-
-export default connect(mapStateToProps)(Header);
+export default Header;

@@ -7,7 +7,7 @@ const POKEMON_SPRITES_PATH = '/static/assets/pokemon/sprites/';
 
 class PokemonList extends Component {
   render() {
-    const { isLoading, data, error, header, showCount = true } = this.props;
+    const { title, isLoading, data, error, showCount = true } = this.props;
 
     if (isLoading) {
       return (
@@ -27,7 +27,7 @@ class PokemonList extends Component {
     if (!data || !data.length) {
       return (
         <div className='pokemon-list-component'>
-          <div className='header'>{showCount && <p>Showing {count} result(s)</p>}</div>
+          <div className='title'>{showCount && <p>Showing 0 result</p>}</div>
         </div>
       );
     }
@@ -49,8 +49,8 @@ class PokemonList extends Component {
 
     return (
       <div className='pokemon-list-component'>
-        <div className='header'>
-          {header && <h3>{header}</h3>}
+        <div className='title'>
+          {title && <h3>{title}</h3>}
           {showCount && <p>Showing {items.length} result(s)</p>}
         </div>
         <div className='list'>{items}</div>

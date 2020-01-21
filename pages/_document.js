@@ -20,13 +20,6 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-
-          {/* Move un-needed render-blocking css or script here to improve performance (Google Pagespeed Insight) */}
-          <link
-            rel='stylesheet'
-            type='text/css'
-            href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css'
-          />
         </body>
       </Html>
     );

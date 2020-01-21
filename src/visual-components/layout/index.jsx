@@ -7,15 +7,13 @@ import '../shared/base.less';
 class Layout extends Component {
   render() {
     return (
-      <>
+      <div className="container">
         <Header />
         <main>{this.props.children}</main>
         <Footer />
-      </>
+      </div>
     );
   }
 }
 
-const mapStateToProps = state => ({});
-
-export default connect(mapStateToProps)(Layout);
+export default Layout;
