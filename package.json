@@ -54,7 +54,6 @@
     "@wdio/sync": "^5.18.5",
     "babel-loader": "^8.0.6",
     "chromedriver": "^78.0.1",
-    "core-js": "^2",
     "css-modules-require-hook": "^4.2.3",
     "eslint": "^6.7.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",

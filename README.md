@@ -82,19 +82,13 @@ This project provides a lot of features out of the box. Here's an overview of th
 git clone https://github.com/haoict/production-ready-webapp-boilerplate.git
 ```
 
-2. Checkout master branch for complete simplest working version:
-
-```
-git checkout master
-```
-
-3. Install the dependencies:
+2. Install the dependencies:
 
 ```
 yarn install (or npm install if you prefer npm, remember to remove yarn.lock first)
 ```
 
-4. Start the development server:
+3. Start the development server:
 
 ```
 yarn dev
@@ -139,12 +133,6 @@ docker run -d -p 3001:3001 production-ready-webapp-boilerplate
 ## <a name='Advance'></a>Advance
 
 ### <a name='Storybook'></a>Storybook
-
-2. Checkout develop branch for latest, full features code:
-
-```
-git checkout develop
-```
 
 1. Start the storybook:
 
@@ -203,13 +191,14 @@ yarn vr-test
 To debug visual regression testing
 
 1. Open the `Screen Sharing`
+
 ```bash
 Hostname: YOUR_MACHINE_IP:5900 (normally 127.0.0.1)
 Password: secret
 ```
+
 2. Run test
 3. Navigate to `Screen Sharing` to see the step by step for running the test
-
 
 Big thank to [davidnguyen179](https://github.com/davidnguyen179), you can check his work about React + Storybook + Visual Regression Testing at: [storybook-wdio](https://github.com/davidnguyen179/storybook-wdio)
 

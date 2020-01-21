@@ -33,9 +33,10 @@
         top: 12px;
         right: 10px;
         cursor: pointer;
-        i {
-          font-size: 20px;
-          color: gray;
+
+        .clear-btn-icon {
+          width: 20px;
+          fill: gray;
         }
       }
     }
@@ -43,9 +44,7 @@
     button {
       position: relative;
       width: 15%;
-      padding: 10px 0;
       background: @primary-color;
-      color: white;
       font-size: 17px;
       border: 2px solid @primary-color;
       border-left: none;
@@ -71,6 +70,12 @@
       }
       &:hover {
         box-shadow: 0 0 10px #719ece;
+      }
+
+      .submit-icon {
+        margin-top: 5px;
+        width: 20px;
+        fill: white;
       }
     }
     &::after {

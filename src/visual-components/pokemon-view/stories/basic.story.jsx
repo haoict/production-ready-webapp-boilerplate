@@ -6,5 +6,6 @@ const data = {
 };
 
 export const test = {
+  isLoading: false,
   data
 };

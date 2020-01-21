@@ -6,7 +6,7 @@ const POKEMON_IMAGE_PATH = '/static/assets/pokemon/images/';
 
 class PokemonView extends Component {
   render() {
-    const { t, lang, isLoading, data, error } = this.props;
+    const { isLoading, data, error } = this.props;
 
     if (isLoading) {
       return (
@@ -16,10 +16,10 @@ class PokemonView extends Component {
       );
     }
     if (error) {
-      return <div>{error.message ? error.message : JSON.stringify(error)}</div>;
+      return <div className='pokemon-view-component'>{error.message ? error.message : JSON.stringify(error)}</div>;
     }
     if (!data) {
-      return <div>Not found</div>;
+      return <div className='pokemon-view-component'>Not found</div>;
     }
 
     const types = data.type.map(type => (
@@ -41,7 +41,7 @@ class PokemonView extends Component {
     }
 
     return (
-      <div className='container'>
+      <div className='pokemon-view-container'>
         <Head>
           <title>{data.name.english}</title>
         </Head>
