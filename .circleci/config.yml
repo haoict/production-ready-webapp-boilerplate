@@ -10,6 +10,7 @@ jobs:
           key: dependency-cache-{{ checksum "./yarn.lock" }}
       - run: yarn
       - run: yarn build
+      - run: yarn lint
       - run: yarn stylelint
       - save_cache:
           key: dependency-cache-{{ checksum "./yarn.lock" }}

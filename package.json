@@ -11,10 +11,11 @@
     "start": "NODE_ENV=production node src/server/index.js",
     "analyze": "ANALYZE=1 next build",
     "storybook": "start-storybook -s ./public -p 9090",
-    "build-storybook": "build-storybook -c .storybook -o built-storybook",
+    "build-storybook": "build-storybook -c .storybook -s ./public -o built-storybook",
     "vr-test:chrome": "wdio run ./wdio/chrome.conf.js --spec",
     "vr-test:chrome:sp": "wdio run ./wdio/smartphone.chrome.conf.js --spec",
     "vr-test": "./.scripts/vr-test.sh",
+    "lint": "eslint 'src/**/*.js?(x)'",
     "stylelint": "stylelint src/**/*.less"
   },
   "dependencies": {
@@ -52,6 +53,7 @@
     "@wdio/spec-reporter": "^5.16.11",
     "@wdio/sync": "^5.18.5",
     "all-contributors-cli": "^6.13.0",
+    "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "chromedriver": "^79.0.0",
     "css-modules-require-hook": "^4.2.3",

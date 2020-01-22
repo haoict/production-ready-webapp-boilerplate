@@ -20,6 +20,7 @@ jobs:
         run: |
           yarn install
           yarn build
+          yarn lint
           yarn stylelint
         env:
           CI: true
