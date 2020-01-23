@@ -1,5 +1,6 @@
 # add git-ignore syntax here of things you don't want copied into docker image
 
+.DS_Store
 .git
 *Dockerfile*
 *docker-compose*
@@ -9,3 +10,9 @@ dist
 *.log
 logs
 .next
+
+built-storybook
+
+# testing
+*/**/actual
+*/**/diff

@@ -37,7 +37,8 @@
 
 🚀 A well-structured production ready modern web application boilerplate (Single Page Application with Server Side Render to boost SEO). With Next.js, React, Redux, Express.js, Less, Axios, Request Caching, EnvConfig, Storybook and more 🚀
 
-Demo: https://pokemon.nless.pro
+- Demo: https://pokemon.nless.pro
+- Demo Storybook: https://storybook.nless.pro
 
 ## <a name='Motivation'></a>Motivation
 

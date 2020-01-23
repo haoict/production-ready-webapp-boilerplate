@@ -12,6 +12,7 @@
     "analyze": "ANALYZE=1 next build",
     "storybook": "start-storybook -s ./public -p 9090",
     "build-storybook": "build-storybook -c .storybook -s ./public -o built-storybook",
+    "storybook-production": "node .storybook/server.js",
     "vr-test:chrome": "wdio run ./wdio/chrome.conf.js --spec",
     "vr-test:chrome:sp": "wdio run ./wdio/smartphone.chrome.conf.js --spec",
     "vr-test": "./.scripts/vr-test.sh",
