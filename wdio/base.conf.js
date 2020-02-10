@@ -6,6 +6,7 @@ exports.baseConfig = {
   runner: 'local',
   hostname: process.env.WDIO_HOST || '127.0.0.1',
   specs: ['**/stories/vr-test/**/index.spec.js'],
+  path: '/wd/hub',
   exclude: [
     // 'path/to/excluded/files'
   ],
