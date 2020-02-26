@@ -33,7 +33,7 @@
     "less": "^3.10.3",
     "moment-timezone": "^0.5.27",
     "next": "^9.2.0",
-    "next-redux-wrapper": "^4.0.1",
+    "next-redux-wrapper": "^5.0.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-redux": "^7.1.3",
