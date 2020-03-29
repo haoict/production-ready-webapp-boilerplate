@@ -6,7 +6,7 @@ import envConfig from '../src/config/env-config';
 class MyDocument extends Document {
   render() {
     return (
-      <Html>
+      <Html lang='en'>
         <Head>
           {/* Must */}
           <meta charSet='utf-8' />

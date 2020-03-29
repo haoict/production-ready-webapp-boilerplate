@@ -24,7 +24,7 @@ class PokemonView extends Component {
 
     const types = data.type.map(type => (
       <div className='type' key={type}>
-        <button className={type}>{type.toUpperCase()}</button>
+        <button aria-label='type' className={type}>{type.toUpperCase()}</button>
       </div>
     ));
 
