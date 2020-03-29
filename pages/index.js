@@ -39,7 +39,7 @@ class Index extends React.Component {
         </Head>
 
         <div style={{ width: '70%', maxWidth: 350, margin: '0 auto 50px', textAlign: 'center' }}>
-          <img src='/static/assets/images/pokedex-logo.png' alt='logo' style={{ width: '100%' }} />
+          <img src='/images/pokedex-logo.png' alt='logo' style={{ width: '100%' }} />
         </div>
 
         <SearchAreaContainer />

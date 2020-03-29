@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 
 import './suggestion-style.less';
 
-const POKEMON_THUMBNAILS_PATH = '/static/assets/pokemon/thumbnails/';
-const POKEMON_SPRITES_PATH = '/static/assets/pokemon/sprites/';
+const POKEMON_SPRITES_PATH = 'https://haoict.github.io/static/images/pokemon/sprites/';
 
 class Suggestion extends Component {
   render() {

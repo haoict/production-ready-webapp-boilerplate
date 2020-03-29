@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Link from 'next/link';
 import './style.less';
 
-const POKEMON_SPRITES_PATH = '/static/assets/pokemon/sprites/';
+const POKEMON_SPRITES_PATH = 'https://haoict.github.io/static/images/pokemon/sprites/';
 
 class PokemonList extends Component {
   render() {

@@ -15,7 +15,7 @@ class Header extends Component {
         <div className='home'>
           <Link as='/' href='/'>
             <a href='/'>
-              <img src={'/static/assets/images/pokedex-app-icon.png'} alt='Home'></img>
+              <img src={'/images/pokedex-app-icon.png'} alt='Home'></img>
             </a>
           </Link>
         </div>

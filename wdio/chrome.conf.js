@@ -5,7 +5,7 @@ const chromeConfig = getChromeConfig();
 
 exports.config = {
   ...baseConfig,
-  port: parseInt(process.env.WDIO_PORT || 4444),
+  port: parseInt(process.env.WDIO_PORT || 4445),
   capabilities: [chromeConfig],
   before: function() {
     baseConfig.before();

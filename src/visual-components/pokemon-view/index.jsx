@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Head from 'next/head';
 import './style.less';
 
-const POKEMON_IMAGE_PATH = '/static/assets/pokemon/images/';
+const POKEMON_IMAGE_PATH = 'https://haoict.github.io/static/images/pokemon/images/';
 
 class PokemonView extends Component {
   render() {

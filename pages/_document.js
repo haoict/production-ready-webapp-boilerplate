@@ -12,7 +12,7 @@ class MyDocument extends Document {
           <meta charSet='utf-8' />
           <meta name='viewport' content='width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no' />
           <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
-          <link rel='icon' type='image/x-icon' href='/static/assets/images/favicon.ico' />
+          <link rel='icon' type='image/x-icon' href='/images/favicon.ico' />
           <meta name='description' content='Production Ready Webapp Boilerplate' />
           <meta name='keywords' content='production, web app, boilerplate, react, pwa' />
           <link rel='manifest' href='/manifest.json' />
@@ -25,7 +25,7 @@ class MyDocument extends Document {
           <meta name='apple-mobile-web-app-title' content='Production Ready Webapp Boilerplate' />
           <meta name='apple-mobile-web-app-capable' content='yes' />
           <meta name='apple-mobile-web-app-status-bar-style' content='default' />
-          <link rel='apple-touch-icon' href='/static/assets/images/favicon.ico'></link>
+          <link rel='apple-touch-icon' href='/images/favicon.ico'></link>
 
           {/* ios Splash screen */}
           <link href="/images/splashscreens/iphone5_splash.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
@@ -42,7 +42,7 @@ class MyDocument extends Document {
           {/* Windows */}
           <meta name='msapplication-navbutton-color' content='#c40012' />
           <meta name='msapplication-TileColor' content='#c40012' />
-          <meta name='msapplication-TileImage' content='/static/assets/images/favicon.ico' />
+          <meta name='msapplication-TileImage' content='/images/favicon.ico' />
           {/* <meta name='msapplication-config' content='browserconfig.xml' /> */}
 
           <script
