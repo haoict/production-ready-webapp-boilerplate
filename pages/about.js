@@ -10,7 +10,7 @@ const About = props => {
 
       <div style={{ margin: '0 8px' }}>
         <h3>About</h3>
-        <p>Production Ready Web App Boilerplate</p>
+        <p>Production Ready Web App Boilerplate v1.0.0</p>
         <h3>Copyright Notice</h3>
         <p>
           Please note all Pokémon data and the logo are copyrighted by the Pokémon Company and its affiliates. This

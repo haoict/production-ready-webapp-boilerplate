@@ -16,3 +16,7 @@ built-storybook
 # testing
 */**/actual
 */**/diff
+
+# pwd build output files
+**/public/sw.js*
+**/public/workbox-*.js*

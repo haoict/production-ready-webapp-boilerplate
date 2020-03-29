@@ -35,7 +35,7 @@
 
 ## <a name='About'></a>About
 
-🚀 A well-structured production ready modern web application boilerplate (Single Page Application with Server Side Render to boost SEO). With Next.js, React, Redux, Express.js, Less, Axios, Request Caching, EnvConfig, Storybook and more 🚀
+🚀 A well-structured production ready modern web application boilerplate (Single Page Application with Server Side Render to boost SEO). With Next.js, React, Redux, Express.js, Less, Axios, Request Caching, EnvConfig, Storybook, Workbox for PWA and more 🚀
 
 - Demo: https://pokemon.nless.pro
 - Demo Storybook: https://storybook.nless.pro
@@ -62,6 +62,7 @@ This project provides a lot of features out of the box. Here's an overview of th
 - **React** - Awesom library for building user interfaces. It is maintained by Facebook and a community of individual developers and companies.
 - **Redux** - A predictable state container for JavaScript apps.
 - **Express.js**- A minimal and flexible Node.js web application framework that handles server-side rendering and integrates with Next.js.
+- **PWA Support** - Integrated Workbox for Progressive Web App support
 - **Less** - CSS preprocessor, which adds special features such as variables, nested rules and mixins (sometimes referred to as syntactic sugar) into regular CSS.
 - **Axios** - Promise based HTTP client. Integrated with axios-cache-adapter to cache the reponse to improve performance
 - **Docker** - A tool designed to make it easier to create, deploy, and run applications by using containers.
@@ -129,6 +130,25 @@ docker build . -t production-ready-webapp-boilerplate
 
 ```
 docker run -d -p 3001:3001 production-ready-webapp-boilerplate
+```
+
+## PWA support
+
+### Setup
+
+1. Go to https://app-manifest.firebaseapp.com/ to create manifest.json and icons bundle
+2. Go to https://appsco.pe/developer/splash-screens to create splash screen images
+2. Put above files to public folder like this
+```
+
+public
+|__ manifest.json
+|__ images
+    |__ icons
+        |__ (icon png files)
+    |__ splashscreens
+        |__ (splashscreen image files)
+
 ```
 
 ## <a name='Advance'></a>Advance

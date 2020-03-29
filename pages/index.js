@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { serviceWorkerRegister } from '../src/helpers/service-worker-register';
 import { getMostViewedPokemonList, getViralPokemonList } from '../src/store/actions/lists';
 import Head from 'next/head';
 import SearchAreaContainer from '../src/container-components/search-area';
@@ -9,6 +10,8 @@ class Index extends React.Component {
   isUnMounted = false;
 
   async componentDidMount() {
+    serviceWorkerRegister();
+
     // this will be rendered in client-side
     // for server-side render, use getInitialProps
     this.props.dispatch(getViralPokemonList());
