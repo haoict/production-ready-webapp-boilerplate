@@ -5,6 +5,7 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/haoict/production-ready-webapp-boilerplate/blob/master/LICENSE)
 [![Greenkeeper badge](https://badges.greenkeeper.io/haoict/production-ready-webapp-boilerplate.svg)](https://greenkeeper.io/)
+[![Known Vulnerabilities](https://snyk.io/test/github/haoict/production-ready-webapp-boilerplate/badge.svg?targetFile=package.json)](https://snyk.io/test/github/haoict/production-ready-webapp-boilerplate?targetFile=package.json)
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 
