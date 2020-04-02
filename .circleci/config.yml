@@ -60,7 +60,10 @@ workflows:
 
   test-build-deploy:
     jobs:
-      - test
+      - test:
+          branches:
+            only:
+              - master
       - build:
           requires:
             - test
