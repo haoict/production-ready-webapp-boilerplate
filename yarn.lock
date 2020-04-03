@@ -13653,12 +13653,10 @@ wcwidth@>=1.0.1, wcwidth@^1.0.1:
   dependencies:
     defaults "^1.0.3"
 
-wdio-chromedriver-service@^5.0.2:
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/wdio-chromedriver-service/-/wdio-chromedriver-service-5.0.2.tgz#171c642252b7ab3bab610b366ddcfe6018a7d67a"
-  integrity sha512-EvdhHJhFpKXIMXph+g84ugSKlYSTiTqg85iu0fD6JzeK6Gg5ZuLeDgvyvvTdkCMq9q4dqwkA+1IikoGQvMOpEA==
-  dependencies:
-    fs-extra "^0.30.0"
+wdio-chromedriver-service@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/wdio-chromedriver-service/-/wdio-chromedriver-service-6.0.0.tgz#6885a9f4b54025a7e1ee4a5c218ce8823728f22c"
+  integrity sha512-xKX631JiJZylCNv2mY2LT7+XkELFF+aIbeAnm6wExs+a2c7/gGVrjgVNYRlco0w8TdugIT/Q5itLzbypbZVroQ==
 
 wdio-image-comparison-service@^1.9.0:
   version "1.12.2"
