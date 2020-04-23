@@ -20,7 +20,7 @@
     "stylelint": "stylelint src/**/*.less"
   },
   "dependencies": {
-    "@storybook/react": "^5.3.8",
+    "@storybook/react": "^5.3.18",
     "@zeit/next-less": "^1.0.1",
     "axios": "^0.19.1",
     "axios-cache-adapter": "^2.5.0",
