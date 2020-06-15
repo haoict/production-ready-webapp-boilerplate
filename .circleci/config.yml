@@ -31,8 +31,8 @@ jobs:
   deploy:
     machine: true
     steps:
-      - run: ssh admin@nless.pro "docker pull $DOCKER_USER/production-ready-webapp-boilerplate:${CIRCLE_BRANCH}; docker kill pokemon || true; docker rm pokemon || true"
-      - run: ssh admin@nless.pro "docker run --name pokemon --restart always -d -p 3005:3005 -v /home/admin/docker/bindmount/pokemon/.env:/usr/src/app/.env $DOCKER_USER/production-ready-webapp-boilerplate:${CIRCLE_BRANCH}"
+      - run: ssh admin@haoictdev.com "docker pull $DOCKER_USER/production-ready-webapp-boilerplate:${CIRCLE_BRANCH}; docker kill pokemon || true; docker rm pokemon || true"
+      - run: ssh admin@haoictdev.com "docker run --name pokemon --restart always -d -p 3005:3005 -v /home/admin/docker/bindmount/pokemon/.env:/usr/src/app/.env $DOCKER_USER/production-ready-webapp-boilerplate:${CIRCLE_BRANCH}"
 
   build-storybook:
     docker:
@@ -47,13 +47,13 @@ jobs:
   deploy-storybook:
     machine: true
     steps:
-      - run: ssh admin@nless.pro "docker pull $DOCKER_USER/production-ready-webapp-boilerplate-storybook:${CIRCLE_BRANCH}; docker kill pokemon-storybook || true; docker rm pokemon-storybook || true"
-      - run: ssh admin@nless.pro "docker run --name pokemon-storybook --restart always -d -p 3006:9090 $DOCKER_USER/production-ready-webapp-boilerplate-storybook:${CIRCLE_BRANCH}"
+      - run: ssh admin@haoictdev.com "docker pull $DOCKER_USER/production-ready-webapp-boilerplate-storybook:${CIRCLE_BRANCH}; docker kill pokemon-storybook || true; docker rm pokemon-storybook || true"
+      - run: ssh admin@haoictdev.com "docker run --name pokemon-storybook --restart always -d -p 3006:9090 $DOCKER_USER/production-ready-webapp-boilerplate-storybook:${CIRCLE_BRANCH}"
 
   cleanup:
     machine: true
     steps:
-      - run: ssh admin@nless.pro "docker image prune -f"
+      - run: ssh admin@haoictdev.com "docker image prune -f"
 
 workflows:
   version: 2
