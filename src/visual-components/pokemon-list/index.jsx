@@ -13,9 +13,7 @@ class PokemonList extends Component {
       return (
         <div className='pokemon-list-component'>
           <div className='title'>{title && <h3>{title}</h3>}</div>
-          <div className='list'>
-            <div className='loading'>Loading...</div>
-          </div>
+          <div className='loading'>Loading...</div>
         </div>
       );
     }
