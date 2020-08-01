@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 export function serviceWorkerRegister() {
   if (typeof window !== 'undefined' && 'serviceWorker' in navigator && window.workbox !== undefined) {
     // add event listeners to handle any of PWA lifecycle event

@@ -1,6 +1,7 @@
 import { searchService } from '../../services/search-service';
 
 function searchPokemonName(name, isfullsearch = false) {
+  // eslint-disable-next-line no-unused-vars
   return async (dispatch, getState) => {
     try {
       if (!name) {

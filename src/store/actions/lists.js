@@ -1,6 +1,7 @@
 import { listsService } from '../../services/lists-service';
 
 function getMostViewedPokemonList() {
+  // eslint-disable-next-line no-unused-vars
   return async (dispatch, getState) => {
     try {
       dispatch({ type: 'GET_MOST_VIEWED_POKEMON_LIST_LOADING' });
@@ -17,6 +18,7 @@ function getMostViewedPokemonList() {
 }
 
 function getViralPokemonList() {
+  // eslint-disable-next-line no-unused-vars
   return async (dispatch, getState) => {
     try {
       dispatch({ type: 'GET_VIRAL_POKEMON_LIST_LOADING' });

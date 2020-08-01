@@ -46,6 +46,7 @@ class PokemonView extends Component {
       <div className='pokemon-view-container'>
         <Head>
           <title>{data.name.english}</title>
+          <meta name='viewport' content='width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no' />
         </Head>
         <div className='pokemon-view-component'>
           <div className='image'>

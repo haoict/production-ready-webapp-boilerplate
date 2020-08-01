@@ -16,6 +16,7 @@ class Search extends React.Component {
       <>
         <Head>
           <title>{title}</title>
+          <meta name='viewport' content='width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no' />
         </Head>
         <PokemonList isLoading={isLoading} data={data} error={error} />
       </>
@@ -23,7 +24,7 @@ class Search extends React.Component {
   }
 }
 
-Search.getInitialProps = async function(context) {
+Search.getInitialProps = async function (context) {
   const { keyword } = context.query;
   if (context.req) {
     // if server side, wait for the request to finish, because we have to return html with full data
@@ -35,7 +36,7 @@ Search.getInitialProps = async function(context) {
   return { nothing: '' };
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   isLoading: state.searchArea.isLoading,
   data: state.searchArea.data,
   error: state.searchArea.error

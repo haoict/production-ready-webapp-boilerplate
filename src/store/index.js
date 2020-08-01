@@ -1,17 +1,11 @@
 import { createStore, applyMiddleware } from 'redux';
+import { createWrapper } from 'next-redux-wrapper';
 import thunkMiddleware from 'redux-thunk';
 import rootReducer from './reducers';
 
-/**
- * @param {object} initialState
- * @param {boolean} options.isServer indicates whether it is a server side or client side
- * @param {Request} options.req NodeJS Request object (not set when client applies initialState from server)
- * @param {Request} options.res NodeJS Request object (not set when client applies initialState from server)
- * @param {boolean} options.debug User-defined debug mode param
- * @param {string} options.storeKey This key will be used to preserve store in global namespace for safe HMR
- */
-const makeStore = (initialState, options) => {
-  const bindMiddleware = middleware => {
+// eslint-disable-next-line no-unused-vars
+const makeStore = (context) => {
+  const bindMiddleware = (middleware) => {
     if (process.env.NODE_ENV !== 'production') {
       const { composeWithDevTools } = require('redux-devtools-extension');
       return composeWithDevTools(applyMiddleware(...middleware));
@@ -19,7 +13,7 @@ const makeStore = (initialState, options) => {
     return applyMiddleware(...middleware);
   };
 
-  return createStore(rootReducer, initialState, bindMiddleware([thunkMiddleware]));
+  return createStore(rootReducer, bindMiddleware([thunkMiddleware]));
 };
 
-export { makeStore };
+export const wrapper = createWrapper(makeStore);

@@ -1,6 +1,7 @@
 import { pokemonService } from '../../services/pokemon-data-service';
 
 function getPokemonData(id) {
+  // eslint-disable-next-line no-unused-vars
   return async (dispatch, getState) => {
     try {
       if (!id) {

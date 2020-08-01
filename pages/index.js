@@ -36,6 +36,7 @@ class Index extends React.Component {
       <>
         <Head>
           <title>{title}</title>
+          <meta name='viewport' content='width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no' />
         </Head>
 
         <div style={{ width: '70%', maxWidth: 350, margin: '0 auto 50px', textAlign: 'center' }}>
@@ -65,13 +66,13 @@ class Index extends React.Component {
   }
 }
 
-Index.getInitialProps = async function(context) {
+Index.getInitialProps = async function (context) {
   await context.store.dispatch(getMostViewedPokemonList());
 
   return { nothing: '' };
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   mostViewedPokemonListIsLoading: state.mostViewedPokemonList.isLoading,
   mostViewedPokemonListData: state.mostViewedPokemonList.data,
   mostViewedPokemonListError: state.mostViewedPokemonList.error,

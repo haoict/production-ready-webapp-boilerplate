@@ -1,4 +1,5 @@
 {
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
   "parser": "babel-eslint",
   "env": {
     "browser": true,
@@ -7,6 +8,7 @@
   "rules": {
     "no-console": "off",
     "comma-dangle": "off",
+    "react/prop-types": "off",
     "react/jsx-filename-extension": "off",
     "no-underscore-dangle": [2, { "allow": ["_id"] }],
     "jsx-a11y/label-has-associated-control": "off",

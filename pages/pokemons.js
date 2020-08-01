@@ -1,3 +1,4 @@
+import React from 'react';
 import { connect } from 'react-redux';
 import { getPokemonData } from '../src/store/actions/pokemon-data';
 import PokemonView from '../src/visual-components/pokemon-view';

@@ -1,3 +1,4 @@
+import React from 'react';
 // _document is only rendered on the server side and not on the client side
 // Event handlers like onClick can't be added to this file
 import Document, { Html, Head, Main, NextScript } from 'next/document';
@@ -10,7 +11,6 @@ class MyDocument extends Document {
         <Head>
           {/* Must */}
           <meta charSet='utf-8' />
-          <meta name='viewport' content='width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no' />
           <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
           <link rel='icon' type='image/x-icon' href='/images/favicon.ico' />
           <meta name='description' content='Production Ready Webapp Boilerplate' />
