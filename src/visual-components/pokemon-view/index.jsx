@@ -22,9 +22,11 @@ class PokemonView extends Component {
       return <div className='pokemon-view-component'>Not found</div>;
     }
 
-    const types = data.type.map(type => (
+    const types = data.type.map((type) => (
       <div className='type' key={type}>
-        <button aria-label='type' className={type}>{type.toUpperCase()}</button>
+        <button aria-label='type' className={type}>
+          {type.toUpperCase()}
+        </button>
       </div>
     ));
 
@@ -47,7 +49,7 @@ class PokemonView extends Component {
         </Head>
         <div className='pokemon-view-component'>
           <div className='image'>
-            <img src={POKEMON_IMAGE_PATH + ('00' + data.id).slice(-3) + '.png'} alt={data.name.english} />
+            <img src={data.image || POKEMON_IMAGE_PATH + ('00' + data.id).slice(-3) + '.png'} alt={data.name.english} />
           </div>
           <div className='info'>
             <div className='head'>

@@ -10,7 +10,7 @@ class Suggestion extends Component {
 
     if (!data || !data.length) return null;
 
-    const items = data.map(item => {
+    const items = data.map((item) => {
       return (
         <div
           key={item.id}
@@ -19,7 +19,10 @@ class Suggestion extends Component {
             onSuggestItemClick(item.id);
           }}>
           <div className='thumbnail'>
-            <img src={POKEMON_SPRITES_PATH + ('00' + item.id).slice(-3) + 'MS.png'} alt={item.name.english} />
+            <img
+              src={item.imageThumb || POKEMON_SPRITES_PATH + ('00' + item.id).slice(-3) + 'MS.png'}
+              alt={item.name.english}
+            />
           </div>
           <div className='name'>{item.name.english}</div>
         </div>

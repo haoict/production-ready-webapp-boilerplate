@@ -32,13 +32,16 @@ class PokemonList extends Component {
       );
     }
 
-    const items = data.map(item => {
+    const items = data.map((item) => {
       return (
         <div key={item.id} className='pokemon-card'>
           <Link as={`/pokemons/${item.id}`} href={`/pokemons?id=${item.id}`}>
             <a>
               <div className='thumbnail'>
-                <img src={POKEMON_SPRITES_PATH + ('00' + item.id).slice(-3) + 'MS.png'} alt={item.name.english} />
+                <img
+                  src={item.imageThumb || POKEMON_SPRITES_PATH + ('00' + item.id).slice(-3) + 'MS.png'}
+                  alt={item.name.english}
+                />
               </div>
               <div className='name'>{item.name.english}</div>
             </a>
