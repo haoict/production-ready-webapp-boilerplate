@@ -22,7 +22,7 @@
   "dependencies": {
     "@storybook/react": "^5.3.19",
     "@zeit/next-less": "^1.0.1",
-    "axios": "^0.19.1",
+    "axios": "^0.21.1",
     "axios-cache-adapter": "^2.5.0",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.4",
