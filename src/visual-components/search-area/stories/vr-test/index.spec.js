@@ -1,3 +1,4 @@
 import { VisualRegressionTest } from '../../../../../lib/test/visual-regression-test';
 
-new VisualRegressionTest(__dirname, 'search-area-component').run();
+// pass elementClassName selector as null to capture the whole html
+new VisualRegressionTest(__dirname, null).run();
