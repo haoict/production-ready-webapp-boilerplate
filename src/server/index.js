@@ -40,7 +40,7 @@ server.use(
 /** DEFINE API
  * serve APIs
  */
-server.use('/api/pokemon', api_pokemon);
+server.use('/api', api_pokemon);
 
 /** DEFINE ROUTES
  * serve web server routes

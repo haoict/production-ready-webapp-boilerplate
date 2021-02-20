@@ -31,7 +31,7 @@ function getRandomNElementsFromArray(arr, n) {
 }
 
 /**
- * GET /api/pokemon/mostviewed
+ * GET /api/mostviewed
  * */
 router.get('/mostviewed', (req, res) => {
   if (!pokedexData) {
@@ -42,7 +42,7 @@ router.get('/mostviewed', (req, res) => {
 });
 
 /**
- * GET /api/pokemon/viral
+ * GET /api/viral
  * */
 router.get('/viral', (req, res) => {
   if (!pokedexData) {
@@ -53,7 +53,7 @@ router.get('/viral', (req, res) => {
 });
 
 /**
- * GET /api/pokemon/search?name=pokemonName
+ * GET /api/search?name=pokemonName
  * */
 router.get('/search', (req, res) => {
   if (!req.query || !req.query.name) {
@@ -68,11 +68,7 @@ router.get('/search', (req, res) => {
   const isFullSearch = req.query.isfullsearch ? req.query.isfullsearch.trim().toLowerCase() === 'true' : false;
 
   let searchResult = pokedexData.filter(
-    c =>
-      c.name.english
-        .trim()
-        .toLowerCase()
-        .search(queryName) !== -1 || c.name.japanese.search(queryName) !== -1
+    (c) => c.name.english.trim().toLowerCase().search(queryName) !== -1 || c.name.japanese.search(queryName) !== -1
   );
 
   if (!isFullSearch) {
@@ -83,7 +79,7 @@ router.get('/search', (req, res) => {
     searchResult = searchResult.slice(0, 100);
   }
 
-  const data = searchResult.map(c => {
+  const data = searchResult.map((c) => {
     const { id, name } = c;
     return { id, name };
   });
@@ -92,9 +88,9 @@ router.get('/search', (req, res) => {
 });
 
 /**
- * GET /api/pokemon/:id
+ * GET /api/pokemons/:id
  * */
-router.get('/:id', (req, res) => {
+router.get('/pokemons/:id', (req, res) => {
   if (!req.params || !req.params.id) {
     return res.send({ result: false, message: 'Empty param' });
   }
@@ -103,6 +99,16 @@ router.get('/:id', (req, res) => {
     return res.status(500).send({ result: false, message: 'Internal Server Error' });
   }
 
-  const data = pokedexData.find(c => c.id.toString() === req.params.id);
+  const data = pokedexData.find((c) => c.id.toString() === req.params.id);
   return res.send({ result: true, data });
+});
+
+/**
+ * GET /api/pokemons
+ * */
+router.get('/pokemons', (req, res) => {
+  if (!pokedexData) {
+    return res.status(500).send({ result: false, message: 'Internal Server Error' });
+  }
+  return res.send({ result: true, data: pokedexData.length });
 });
