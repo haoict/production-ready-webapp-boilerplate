@@ -1,7 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
+import { wrapper } from '../src/store';
 
-const Error = props => {
+const Error = (props) => {
   const { statusCode } = props;
   let errMsg = `An error occurred 😵`;
   if (statusCode) {
@@ -20,9 +21,9 @@ const Error = props => {
   );
 };
 
-Error.getInitialProps = function({ res, err }) {
+export const getServerSideProps = wrapper.getServerSideProps(async ({ res, err }) => {
   const statusCode = res ? res.statusCode : err ? err.statusCode : null;
-  return { statusCode };
-};
+  return { props: { statusCode } };
+});
 
 export default Error;

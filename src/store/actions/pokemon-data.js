@@ -10,7 +10,7 @@ function getPokemonData(id) {
       dispatch({ type: 'GET_POKEMON_DATA_LOADING' });
       const response = await pokemonService.fetchPokemonData(id);
       if (response.result) {
-        dispatch({ type: 'GET_POKEMON_DATA_SUCCESS', data: response.data });
+        dispatch({ type: 'GET_POKEMON_DATA_SUCCESS', data: response.data || null });
         return;
       }
       dispatch({ type: 'GET_POKEMON_DATA_ERROR', error: response });

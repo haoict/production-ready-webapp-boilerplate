@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { wrapper } from '../src/store';
 import { searchPokemonName } from '../src/store/actions/search-area';
 import Head from 'next/head';
 import PokemonList from '../src/visual-components/pokemon-list';
@@ -24,17 +25,9 @@ class Search extends React.Component {
   }
 }
 
-Search.getInitialProps = async function (context) {
-  const { keyword } = context.query;
-  if (context.req) {
-    // if server side, wait for the request to finish, because we have to return html with full data
-    await context.store.dispatch(searchPokemonName(keyword, true));
-  } else {
-    context.store.dispatch(searchPokemonName(keyword, true));
-  }
-
-  return { nothing: '' };
-};
+export const getServerSideProps = wrapper.getServerSideProps(async (context) => {
+  await context.store.dispatch(searchPokemonName(context.query.keyword, true));
+});
 
 const mapStateToProps = (state) => ({
   isLoading: state.searchArea.isLoading,

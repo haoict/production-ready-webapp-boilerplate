@@ -13,8 +13,11 @@ module.exports = withLess(
       maxInactiveAge: 1000 * 30 * 60,
       pagesBufferLength: 10
     },
-    webpack: config => {
-      config.node = { fs: 'empty' };
+    webpack: (config, { isServer }) => {
+      // Fixes npm packages that depend on `fs` module
+      if (!isServer) {
+        config.node = { fs: 'empty' };
+      }
       return config;
     }
   })

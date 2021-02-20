@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { wrapper } from '../src/store';
 import { serviceWorkerRegister } from '../src/helpers/service-worker-register';
 import { getMostViewedPokemonList, getViralPokemonList } from '../src/store/actions/lists';
 import Head from 'next/head';
@@ -13,7 +14,7 @@ class Index extends React.Component {
     serviceWorkerRegister();
 
     // this will be rendered in client-side
-    // for server-side render, use getInitialProps
+    // for server-side render, use getServerSideProps
     this.props.dispatch(getViralPokemonList());
   }
 
@@ -66,11 +67,9 @@ class Index extends React.Component {
   }
 }
 
-Index.getInitialProps = async function (context) {
+export const getServerSideProps = wrapper.getServerSideProps(async (context) => {
   await context.store.dispatch(getMostViewedPokemonList());
-
-  return { nothing: '' };
-};
+});
 
 const mapStateToProps = (state) => ({
   mostViewedPokemonListIsLoading: state.mostViewedPokemonList.isLoading,
