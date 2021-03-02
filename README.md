@@ -36,8 +36,8 @@
 
 🚀 A well-structured production ready modern web application boilerplate (Single Page Application with Server Side Render to boost SEO). With Next.js, React, Redux, Express.js, Less, Axios, Request Caching, EnvConfig, Storybook, Workbox for PWA and more 🚀
 
-- Demo: https://pokemon.haoictdev.com
-- Demo Storybook: https://storybook.haoictdev.com
+- Demo: https://pokemon.haoict.co
+- Demo Storybook: https://storybook.haoict.co
 
 ## <a name='Motivation'></a>Motivation
 
