@@ -3,7 +3,7 @@ version: 2
 jobs:
   test:
     docker:
-      - image: node:12
+      - image: node:14
     steps:
       - checkout
       - restore_cache:
@@ -20,7 +20,7 @@ jobs:
 
   build:
     docker:
-      - image: circleci/node:12
+      - image: circleci/node:14
     steps:
       - setup_remote_docker:
           version: 19.03.13
@@ -32,12 +32,12 @@ jobs:
   deploy:
     machine: true
     steps:
-      - run: ssh admin@35.187.203.94 "docker pull $DOCKER_USER/production-ready-webapp-boilerplate:${CIRCLE_BRANCH}; docker kill pokemon || true; docker rm pokemon || true"
-      - run: ssh admin@35.187.203.94 "docker run --name pokemon --restart always -d -p 3005:3005 -v /home/admin/docker/bindmount/pokemon/.env:/usr/src/app/.env $DOCKER_USER/production-ready-webapp-boilerplate:${CIRCLE_BRANCH}"
+      - run: ssh admin@35.200.101.255 "docker pull $DOCKER_USER/production-ready-webapp-boilerplate:${CIRCLE_BRANCH}; docker kill pokemon || true; docker rm pokemon || true"
+      - run: ssh admin@35.200.101.255 "docker run --name pokemon --restart always -d -p 4000:4000 -v /home/admin/docker/bindmount/pokemon/.env:/usr/src/app/.env $DOCKER_USER/production-ready-webapp-boilerplate:${CIRCLE_BRANCH}"
 
   build-storybook:
     docker:
-      - image: circleci/node:12
+      - image: circleci/node:14
     steps:
       - setup_remote_docker:
           version: 19.03.13
@@ -49,13 +49,13 @@ jobs:
   deploy-storybook:
     machine: true
     steps:
-      - run: ssh admin@35.187.203.94 "docker pull $DOCKER_USER/production-ready-webapp-boilerplate-storybook:${CIRCLE_BRANCH}; docker kill pokemon-storybook || true; docker rm pokemon-storybook || true"
-      - run: ssh admin@35.187.203.94 "docker run --name pokemon-storybook --restart always -d -p 3006:9090 $DOCKER_USER/production-ready-webapp-boilerplate-storybook:${CIRCLE_BRANCH}"
+      - run: ssh admin@35.200.101.255 "docker pull $DOCKER_USER/production-ready-webapp-boilerplate-storybook:${CIRCLE_BRANCH}; docker kill pokemon-storybook || true; docker rm pokemon-storybook || true"
+      - run: ssh admin@35.200.101.255 "docker run --name pokemon-storybook --restart always -d -p 4001:9090 $DOCKER_USER/production-ready-webapp-boilerplate-storybook:${CIRCLE_BRANCH}"
 
   cleanup:
     machine: true
     steps:
-      - run: ssh admin@35.187.203.94 "docker image prune -f"
+      - run: ssh admin@35.200.101.255 "docker image prune -f"
 
 workflows:
   version: 2

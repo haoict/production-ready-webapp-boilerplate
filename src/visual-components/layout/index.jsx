@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from '../header';
 import Footer from '../footer';
 
-import '../shared/base.less';
+require('../shared/base.less');
 
 class Layout extends Component {
   render() {

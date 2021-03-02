@@ -11,7 +11,7 @@ const mostViewedPokemonList = (state = initState, action) => {
     case 'GET_MOST_VIEWED_POKEMON_LIST_SUCCESS':
       return { isLoading: false, data: action.data };
     case 'GET_MOST_VIEWED_POKEMON_LIST_ERROR':
-      return { isLoading: false, error: action.error };
+      return { isLoading: false, error: {}};
     default:
       return state;
   }

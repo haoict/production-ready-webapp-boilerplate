@@ -1,24 +1,15 @@
-const withLess = require('@zeit/next-less');
-const withPWA = require('next-pwa');
+const withAntdLess = require('next-plugin-antd-less');
 
-module.exports = withLess(
-  withPWA({
-    pwa: {
-      register: false,
-      skipWaiting: false,
-      dest: 'public'
-    },
-    // only for dev
-    onDemandEntries: {
-      maxInactiveAge: 1000 * 30 * 60,
-      pagesBufferLength: 10
-    },
-    webpack: (config, { isServer }) => {
-      // Fixes npm packages that depend on `fs` module
-      if (!isServer) {
-        config.node = { fs: 'empty' };
-      }
-      return config;
-    }
-  })
-);
+module.exports = withAntdLess({
+  // for Next.js ONLY
+  nextjs: {
+    localIdentNameFollowDev: true, // default false, for easy to debug on PROD mode
+  },
+
+  // Other Config Here...
+
+  webpack(config) {
+    config.resolve.fallback = { fs: false, path: false, stream: false, constants: false };
+    return config;
+  },
+});

@@ -13,9 +13,9 @@ function getPokemonData(id) {
         dispatch({ type: 'GET_POKEMON_DATA_SUCCESS', data: response.data || null });
         return;
       }
-      dispatch({ type: 'GET_POKEMON_DATA_ERROR', error: response });
+      dispatch({ type: 'GET_POKEMON_DATA_ERROR', error: 'No data' });
     } catch (error) {
-      dispatch({ type: 'GET_POKEMON_DATA_ERROR', error: error });
+      dispatch({ type: 'GET_POKEMON_DATA_ERROR', error });
     }
   };
 }

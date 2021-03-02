@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Head from 'next/head';
-import './style.less';
+require('./style.less');
 
 const POKEMON_IMAGE_PATH = 'https://haoict.github.io/static/images/pokemon/images/';
 

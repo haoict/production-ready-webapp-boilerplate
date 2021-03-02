@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Router from 'next/router';
 import Suggestion from './suggestion';
-import './style.less';
+require('./style.less');
 
 class SearchArea extends Component {
   state = {

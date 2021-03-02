@@ -10,9 +10,9 @@ function getMostViewedPokemonList() {
         dispatch({ type: 'GET_MOST_VIEWED_POKEMON_LIST_SUCCESS', data: response.data });
         return;
       }
-      dispatch({ type: 'GET_MOST_VIEWED_POKEMON_LIST_ERROR', error: response });
+      dispatch({ type: 'GET_MOST_VIEWED_POKEMON_LIST_ERROR', error: 'No data' });
     } catch (error) {
-      dispatch({ type: 'GET_MOST_VIEWED_POKEMON_LIST_ERROR', error: error });
+      dispatch({ type: 'GET_MOST_VIEWED_POKEMON_LIST_ERROR', error });
     }
   };
 }
@@ -27,9 +27,9 @@ function getViralPokemonList() {
         dispatch({ type: 'GET_VIRAL_POKEMON_LIST_SUCCESS', data: response.data });
         return;
       }
-      dispatch({ type: 'GET_VIRAL_POKEMON_LIST_ERROR', error: response });
+      dispatch({ type: 'GET_VIRAL_POKEMON_LIST_ERROR', error: 'No data' });
     } catch (error) {
-      dispatch({ type: 'GET_VIRAL_POKEMON_LIST_ERROR', error: error });
+      dispatch({ type: 'GET_VIRAL_POKEMON_LIST_ERROR', error });
     }
   };
 }

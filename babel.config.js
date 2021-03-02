@@ -3,7 +3,7 @@ module.exports = {
       'next/babel',
       ['@babel/preset-env', {
           targets: {
-              node: 12
+              node: 14
           }
       }]
   ]

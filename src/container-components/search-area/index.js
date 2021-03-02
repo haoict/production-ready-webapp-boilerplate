@@ -7,7 +7,7 @@ import Router from 'next/router';
 class SearchAreaContainer extends Component {
   onSuggestItemClick = id => {
     this.props.searchPokemonName('');
-    Router.push(`/pokemons?id=${id}`, `/pokemons/${id}`).then(() => window.scrollTo(0, 0));
+    Router.push(`/pokemon?id=${id}`, `/pokemon/${id}`).then(() => window.scrollTo(0, 0));
   };
 
   render() {

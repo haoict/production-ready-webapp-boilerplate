@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { wrapper } from '../src/store';
-import { getPokemonData } from '../src/store/actions/pokemon-data';
-import PokemonView from '../src/visual-components/pokemon-view';
+import { wrapper } from '../../src/store';
+import { getPokemonData } from '../../src/store/actions/pokemon-data';
+import PokemonView from '../../src/visual-components/pokemon-view';
 
 const Pokemons = (props) => {
   const { isLoading, data, error } = props;

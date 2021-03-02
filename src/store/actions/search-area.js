@@ -14,12 +14,11 @@ function searchPokemonName(name, isfullsearch = false) {
         dispatch({ type: 'SEARCH_POKEMON_NAME_SUCCESS', data: response.data });
         return;
       }
-      dispatch({ type: 'SEARCH_POKEMON_NAME_ERROR', error: response });
+      dispatch({ type: 'SEARCH_POKEMON_NAME_ERROR', error: 'No data' });
     } catch (error) {
-      dispatch({ type: 'SEARCH_POKEMON_NAME_ERROR', error: error });
+      dispatch({ type: 'SEARCH_POKEMON_NAME_ERROR', error });
     }
   };
 }
-
 
 export { searchPokemonName };

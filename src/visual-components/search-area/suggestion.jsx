@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './suggestion-style.less';
+require('./suggestion-style.less');
 
 const POKEMON_SPRITES_PATH = 'https://haoict.github.io/static/images/pokemon/sprites/';
 

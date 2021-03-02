@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Link from 'next/link';
-import './style.less';
+require('./style.less');
 
 const POKEMON_SPRITES_PATH = 'https://haoict.github.io/static/images/pokemon/sprites/';
 
@@ -33,7 +33,7 @@ class PokemonList extends Component {
     const items = data.map((item) => {
       return (
         <div key={item.id} className='pokemon-card'>
-          <Link as={`/pokemons/${item.id}`} href={`/pokemons?id=${item.id}`}>
+          <Link as={`/pokemon/${item.id}`} href={`/pokemon?id=${item.id}`}>
             <a>
               <div className='thumbnail'>
                 <img
