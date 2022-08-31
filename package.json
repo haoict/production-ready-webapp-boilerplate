@@ -30,7 +30,7 @@
     "express": "^4.17.1",
     "helmet": "^3.23.3",
     "less": "^3.12.2",
-    "moment-timezone": "^0.5.31",
+    "moment-timezone": "^0.5.35",
     "next": "^10.0.7",
     "next-pwa": "2.1.2",
     "next-redux-wrapper": "^6.0.2",
